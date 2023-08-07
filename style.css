@@ -325,10 +325,66 @@ span.socials-bg-text {
     color: #EEEEEE;
 }
 
+/* .dialog-text{
+    position: relative;
+    margin-left: 5px;
+    padding: 0;
+    width: 115px;
+    pointer-events: none;
+    color: var(--blue);
+    border: 0;
+    background: none;
+    opacity: 0.5;
+    transition: 600ms;
+}
+.email-image{
+    display: flex;
+}
 
+.email-image:hover{
+    cursor: pointer;
+} */
+/* ... other styles ... */
 
+li.social-icons {
+    position: relative;
+    width: 120px;
+    z-index: 999;
+}
 
+.dialog-text {
+    position: absolute;
+    margin-left: 5px;
+    padding: 0;
+    width: 115px;
+    pointer-events: none;
+    color: var(--blue);
+    border: 0;
+    background: none;
+    opacity: 0.5;
+    transition: 800ms;
+    top: 50px;
+    left: calc(100% + 5px);
+    pointer-events: none;
+}
 
+.email-image {
+    display: flex;
+}
 
+.email-image:hover{
+    cursor: pointer;
+} 
 
-
+.social-icon-track{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 82px;
+    padding: 0px;
+    margin-left: 135px;
+    padding-top: 16px;
+}
+.social-icon-track-container{
+    width: 0;
+}

@@ -155,6 +155,18 @@ function sendMail(){
             })
         .catch((err) => {console.log(err)});
 }
+//copy email function
+const emailButton = document.querySelector('.email-image')
+const modal = document.querySelector('.dialog-text')
+emailButton.addEventListener('click',()=>{
+  navigator.clipboard.writeText('kashyapt.business@gmail.com');
+  modal.show();
+  setTimeout(closeModal,1000)
+})
+function closeModal(){
+    modal.close()
+}
+//copied email modal
 
 
 
@@ -162,9 +174,9 @@ function sendMail(){
 //smooth scroll
 const lenis = new Lenis()
 
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
+// lenis.on('scroll', (e) => {
+//   console.log(e)
+// })
 
 function raf(time) {
   lenis.raf(time)
