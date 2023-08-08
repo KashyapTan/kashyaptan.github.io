@@ -132,7 +132,7 @@ function rotate360() {
 
 //email sender
 const button = document.querySelector('.form-submit')
-button.addEventListener('click',sendMail)
+button.addEventListener('click', sendMail)
 
 function sendMail(){
     var data = {
@@ -144,16 +144,20 @@ function sendMail(){
     const serviceID = 'service_qfmvlmr'
     const templateID = 'template_0jxzgyq'
 
+    if(data.name===''||data.email===''||data.message===''){
+        return
+    }
+    
     emailjs.send(serviceID, templateID, data)
         .then(
-            res =>{
+            res => {
                 document.getElementById('name').value = "";
                 document.getElementById('email').value = "";
                 document.getElementById('message').value = "";
                 console.log(res)
                 alert("Email sent successfully")
             })
-        .catch((err) => {console.log(err)});
+        .catch((err) => { console.log(err) });
 }
 //copy email function
 const emailButton = document.querySelector('.email-image')
