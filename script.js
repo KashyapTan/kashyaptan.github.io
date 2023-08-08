@@ -159,7 +159,6 @@ function sendMail(){
                 document.getElementById('name').value = "";
                 document.getElementById('email').value = "";
                 document.getElementById('message').value = "";
-                console.log(res)
                 alert("Email sent successfully")
             })
         .catch((err) => { console.log(err) });
