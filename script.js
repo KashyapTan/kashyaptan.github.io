@@ -131,7 +131,6 @@ function rotate360() {
 }
 
 //email sender
-
 document.addEventListener('DOMContentLoaded',  () => {
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', function (event) {
@@ -140,6 +139,7 @@ document.addEventListener('DOMContentLoaded',  () => {
     });
 });
 function sendMail(){
+    const button = document.querySelector('.form-submit')
     var data = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -159,14 +159,18 @@ function sendMail(){
                 document.getElementById('name').value = "";
                 document.getElementById('email').value = "";
                 document.getElementById('message').value = "";
-                alert("Email sent successfully")
+                button.textContent = "Sent!";
+                setTimeout(()=>{
+                    button.textContent = "Send Message";
+                },3000)
             })
         .catch((err) => { console.log(err) });
 }
+
 //copy email function
 const emailButton = document.querySelector('.email-image')
 const modal = document.querySelector('.dialog-text')
-emailButton.addEventListener('click',()=>{
+emailButton.addEventListener('click', ()=>{
   navigator.clipboard.writeText('kashyapt.business@gmail.com');
   modal.show();
   setTimeout(closeModal,1000)
@@ -174,17 +178,9 @@ emailButton.addEventListener('click',()=>{
 function closeModal(){
     modal.close()
 }
-//copied email modal
-
-
-
 
 //smooth scroll
 const lenis = new Lenis()
-
-// lenis.on('scroll', (e) => {
-//   console.log(e)
-// })
 
 function raf(time) {
   lenis.raf(time)
