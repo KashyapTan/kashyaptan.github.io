@@ -131,9 +131,14 @@ function rotate360() {
 }
 
 //email sender
-const button = document.querySelector('.form-submit')
-button.addEventListener('click', sendMail)
 
+document.addEventListener('DOMContentLoaded',  () => {
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        sendMail();
+    });
+});
 function sendMail(){
     var data = {
         name: document.getElementById('name').value,
