@@ -84,7 +84,7 @@ ul{
 
 }
 .nav-elements li a:hover{
-    color:white;
+    color:#EEEEEE;
 }
 
 
@@ -105,7 +105,7 @@ ul{
 }
 
 .social-logos:hover svg path {
-    fill: white;
+    fill: #EEEEEE;
     transition: fill .4s ease-out;
 }
 
