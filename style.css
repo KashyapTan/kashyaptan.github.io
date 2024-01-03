@@ -49,7 +49,8 @@ header{
     display: flex;
     align-items: center;
     margin: 0 auto;
-    left: 76.7%;
+    /* left: 76.7%; ORIGINAL LEFT*/
+    right: 5em;
     transform: translateX(200%);
     transition: transform var(--transtion-time) ease-in, var(--transtion-time); 
 }
