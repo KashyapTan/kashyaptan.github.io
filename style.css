@@ -13,11 +13,12 @@ body{
     width: 100vw;
     margin:0;
     overflow-x: hidden;
-
 }
+
 p{
     margin: 0;
 }
+
 /* header */
 header{
     display: block;
@@ -32,6 +33,7 @@ header{
     z-index: 999;
     background-color: rgba(255,255,255,0.05);
 }
+
 .header-container{
     display: flex;
     align-items: center;
@@ -41,6 +43,7 @@ header{
     padding-left: 0.3vw;
     background-color: var(--cont-hp);
 }
+
 .header-navbar {
     position: fixed;
     display: flex;
@@ -50,14 +53,14 @@ header{
     transform: translateX(200%);
     transition: transform var(--transtion-time) ease-in, var(--transtion-time); 
 }
+
 .translate-right{
     transform: translateX(200%);
 }
+
 .translate-left{
     transform: translateX(0%);
-
 }
-
 
 ul{
     list-style: none;
@@ -66,6 +69,7 @@ ul{
     z-index: 999;
     opacity: 0;
 }
+
 .nav-elements{
     display: flex;
     align-items: center;
@@ -76,6 +80,7 @@ ul{
     padding: 0;
     margin: 0;
 }
+
 .nav-elements li a{
     position: relative;
     text-decoration: none;
@@ -83,21 +88,22 @@ ul{
     transition: color .4s ease-out;
 
 }
+
 .nav-elements li a:hover{
     color:#EEEEEE;
 }
-
 
 .logo-space{
     position: fixed;
     z-index: 999;
     margin-top: 0.1%;
-    
 }
+
 .social-logos{
     margin-top: 1.5%;
 
 }
+
 .social-logos svg path{
     position: relative;
     fill: var(--blue);
@@ -114,6 +120,7 @@ img.kash-logo{
     height: 34.5px;
     display: block; 
 }
+
 img.menu-logo{
     margin-top: -13%;
     width: 34.5px;
@@ -130,13 +137,13 @@ img.menu-logo{
     left:96.2vw;
 }
 
-
 /* home page */
 .homepage{
     height:100vh;
     width: 100vw;
      background-color: var(--cont-hp)
 }
+
 .intro-text{
     position: relative;
     color:white;
@@ -149,21 +156,23 @@ img.menu-logo{
 
 }
 
-
 /* page 1 */
 .page-1{
     height: 100vh;
     width: 100vw;
     background-color: black;
 }
+
 svg.turb{
     width: 100vw;
     height: 100vh;
     z-index: -1;
 }
+
 .displacement {
     filter: url(#displacementFilter);
 }
+
 .aboutme-text{
     position: absolute;
     color: white;
@@ -175,11 +184,7 @@ svg.turb{
     z-index: 1;
 }
 
-
-
 /* page 2 */
-
-
 .container{
     display: flex;
     height: 100vh;
@@ -187,12 +192,12 @@ svg.turb{
     gap:4vmin;
     background-color: black;
 }
+
 section{
     width: 50vw;
     padding: 5vw 1vw;
     display: block;
 }
-
 
 .scroll-progress{
 position: absolute;
@@ -200,8 +205,8 @@ width: 50vw;
 left: 20vw;
 top:-7%;
 padding: 5vw 5vw;
-
 }
+
 mask{
     width: 0;
 }
@@ -218,12 +223,12 @@ section.projects-text{
     flex-direction: column;
 }
     
-
 span#word1{
     position: relative;
     left: 50%;
     
 }
+
 span#word2{
     position: relative;
     left: 100%;
@@ -237,8 +242,8 @@ span#word2{
     width: 100vw;
     background-color: grey;
 }
-/* page 4 */
 
+/* page 4 */
 .page-4{
     height: 100vh;
     width: 100vw;
@@ -255,6 +260,7 @@ form{
     height: 100vh;
     width: 60vw;
 }
+
 form h1{
     position: relative;
     left: 15%;
@@ -265,6 +271,7 @@ form h1{
     margin-top: 17%;
     font-size: 60px;
 }
+
 form input, form textarea{
     position: relative;
     border: 0;
@@ -278,20 +285,24 @@ form input, form textarea{
     width: 40vw;
     left: 15%;
 }
+
 form input#name, form input#email, form textarea#message{
     font-family: 'Montserrat', sans-serif;
     color: rgba(255, 255, 255, 0.75)
 
 }
+
 form input::placeholder{
     font-family: 'Montserrat', sans-serif;
     color: rgb(170, 170, 170);
 
 }
+
 form textarea::placeholder{
     font-family: 'Montserrat', sans-serif;
     color: rgb(170, 170, 170);
 }
+
 form button{
     padding: 15px;
     color: white;
@@ -385,6 +396,7 @@ li.social-icons {
     margin-left: 135px;
     padding-top: 16px;
 }
+
 .social-icon-track-container{
     width: 0;
 }
