@@ -179,6 +179,27 @@ function closeModal(){
     modal.close()
 }
 
+//Page navigations
+const homePageLink1 = document.querySelector('#home-page-link')
+homePageLink1.addEventListener('click', () =>{
+    document.querySelector('#home-page').scrollIntoView({ behavior: 'smooth' });
+})
+
+const homePageLink2 = document.querySelector('#home-page-link-2')
+homePageLink2.addEventListener('click', () =>{
+    document.querySelector('#home-page').scrollIntoView({ behavior: 'smooth' });
+})
+
+const aboutPageLink = document.querySelector('#about-page-link')
+aboutPageLink.addEventListener('click', () =>{
+    document.querySelector('#about-page').scrollIntoView({ behavior: 'smooth' });
+})
+
+const contactPageLink = document.querySelector('#contact-page-link')
+contactPageLink.addEventListener('click', () =>{
+    document.querySelector('#contacts-page').scrollIntoView({ behavior: 'smooth' });
+})
+
 //smooth scroll
 const lenis = new Lenis()
 
