@@ -6,6 +6,8 @@
     --bg-rgb: 14,18,18;
     --cont-hp: #0e1212;
     --transtion-time: 800ms;
+    --skills-box-width: calc(100vw/4);
+    --skills-box-height: calc(100vw/6);
 }
 
 body{
@@ -273,6 +275,46 @@ span#word2{
     height: 100vh;
     width: 100vw;
     background-color: grey;
+}
+
+.skills-container{
+    padding-top: 3rem;
+}
+
+.front-end-skills{
+    background-color: red;
+    position: absolute;
+    width: var(--skills-box-width);
+    height: var(--skills-box-height);
+    left: calc(50% -(var(--skills-box-width)/2));
+    border-radius: 8px;
+}
+.back-end-skills{
+    background-color: green;
+    position: absolute;
+    width: var(--skills-box-width);
+    height: var(--skills-box-height);
+    top: calc(50% - (var(--skills-box-height)/2));
+    left: calc((var(--skills-box-width)*0.1));
+    border-radius: 8px;
+}
+.data-management-api-skills{
+    background-color: blue;
+    position: absolute;
+    width: var(--skills-box-width);
+    height: var(--skills-box-height);
+    top: calc(50% - (var(--skills-box-height)/2));
+    left: calc(100% - (var(--skills-box-width)*1.1));
+    border-radius: 8px;
+}
+.functional-skills{
+    background-color: yellow;
+    position: absolute;
+    width: var(--skills-box-width);
+    height: var(--skills-box-height);
+    left: calc(50% -(var(--skills-box-width)/2));
+    top:calc(100% - (var(--skills-box-height)*1.03));
+    border-radius: 8px;
 }
 
 /* page 4 */

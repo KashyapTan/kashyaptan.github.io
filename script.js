@@ -8,7 +8,8 @@ const sections = gsap.utils.toArray('.container section');
 const mask = document.querySelector('.mask');
 
 let scrollTween = gsap.to(sections, {
-    xPercent: -430,
+    // xPercent: -430,
+    xPercent: -100 * (sections.length - 1.5),
     ease: "none",
     scrollTrigger: {
         trigger: ".container",
@@ -42,6 +43,140 @@ gsap.to(mask, {
         scrub: 1,
     }
 });
+
+//GSAP animations for page 3
+const page3 = document.querySelector('.page-3')
+const element1 = document.querySelector('.front-end-skills')
+const element2 = document.querySelector('.data-management-api-skills')
+const element3 = document.querySelector('.functional-skills')
+const element4 = document.querySelector('.back-end-skills')
+
+let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: page3,
+        toggleActions: 'play none none none',
+        pin: true,
+        markers: false,
+        end: "+=3000px",
+    }
+})
+
+tl.to(page3,{})
+
+
+
+//move element 1 to element 2's position
+let tlEle1 = gsap.timeline({
+    scrollTrigger: {
+        trigger: page3,
+        toggleActions: 'play none none none',
+        start: '0 0',
+        end: 'bottom 30%',
+        scrub: 1,
+        markers: true,
+        end: "+=3000px",
+        snap: 1/4,
+    }
+})
+
+
+for(let i=0;i<4;i++){
+    tlEle1.to(element1, {
+        left: () =>{
+            var element2Positions = element2.getBoundingClientRect()
+            return element2Positions.left
+        },
+        top: () =>{
+            var element2Positions = element2.getBoundingClientRect()
+            return element2Positions.top
+        },
+        ease: "power1.inOut",
+    })
+}
+//move element 2 to element 3's position
+let tlEle2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: page3,
+        toggleActions: 'play none none none',
+        start: '0 0',
+        end: 'bottom 30%',
+        scrub: 1,
+        markers: true,
+        end: "+=3000px",
+        snap: 1/4,
+    }
+})
+
+for(let i=0;i<4;i++){
+    tlEle2.to(element2, {
+        left: () =>{
+            var element3Positions = element3.getBoundingClientRect()
+            return element3Positions.left
+        },
+        top: () =>{
+            var element3Positions = element3.getBoundingClientRect()
+            return element3Positions.top
+        },
+        ease: "power1.inOut",
+    })
+}
+
+//move element 3 to element 4's position
+let tlEle3 = gsap.timeline({
+    scrollTrigger: {
+        trigger: page3,
+        toggleActions: 'play none none none',
+        start: '0 0',
+        end: 'bottom 30%',
+        scrub: 1,
+        markers: true,
+        end: "+=3000px",
+        snap: 1/4,
+    }
+})
+
+
+for(let i=0;i<4;i++){
+    tlEle3.to(element3, {
+        left: () =>{
+            var element4Positions = element4.getBoundingClientRect()
+            return element4Positions.left
+        },
+        top: () =>{
+            var element4Positions = element4.getBoundingClientRect()
+            return element4Positions.top
+        },
+        ease: "power1.inOut",
+    })
+}
+
+//move element 4 to element 1's position
+let tlEle4 = gsap.timeline({
+    scrollTrigger: {
+        trigger: page3,
+        toggleActions: 'play none none none',
+        start: '0 0',
+        end: 'bottom 30%',
+        scrub: 1,
+        markers: true,
+        end: "+=3000px",
+        snap: 1/4,
+    }
+})
+
+for(let i=0;i<4;i++){
+    tlEle4.to(element4, {
+        left: () =>{
+            var element1Positions = element1.getBoundingClientRect()
+            return element1Positions.left
+        },
+        top: () =>{
+            var element1Positions = element1.getBoundingClientRect()
+            return element1Positions.top
+        },
+        ease: "power1.inOut",
+    })
+}
 
 //text animations
 
