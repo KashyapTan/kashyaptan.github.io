@@ -43,6 +43,10 @@ p{
 }
 
 /* header */
+.card-container{
+    width: 100vw;
+    height: 100vh;
+}
 header{
     display: block;
 }
@@ -169,26 +173,34 @@ img.menu-logo{
 .homepage{
     height:100vh;
     width: 100vw;
-     background-color: var(--cont-hp)
+    background-color: var(--cont-hp)
+}
+.home-page-bg-image{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
 }
 
 .intro-text{
-    position: relative;
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
     color:white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top:30%;
     font-size: 80px;
-
 }
 
 /* page 1 */
 .page-1{
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 svg.turb{
@@ -204,11 +216,9 @@ svg.turb{
 .aboutme-text{
     position: absolute;
     color: white;
-    font-size: 80px;
+    font-size: 60px;
+    text-wrap: wrap;
     width: 80vw;
-    left: 80px;
-    top: 120%;
-    margin-left: 2vw;
     z-index: 1;
 }
 

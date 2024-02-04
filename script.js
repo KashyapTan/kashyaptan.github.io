@@ -1,8 +1,47 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-// page 2 animations 
+//home page animations
+const homePage = document.querySelector('.homepage')
+const page1 = document.querySelector('.page-1')
+const cardContainer = document.querySelector('.card-container')
 
+let homePageTransition = gsap.timeline({
+    scrollTrigger: {
+        trigger: cardContainer,
+        toggleActions: 'play none none none',
+        pin: true,
+        scrub: 1,
+        markers: false,
+        end: "+=1500px",
+    }
+})
+
+homePageTransition.to(cardContainer, {})
+
+
+let page1ToHomePage = gsap.timeline({
+    scrollTrigger: {
+        trigger: cardContainer,
+        toggleActions: 'play none none none',
+        start: '0 0',
+        scrub: 1,
+        end: "+=1500px",
+        snap: 1,
+        markers: true,
+    }
+})
+
+
+
+page1ToHomePage.to(page1, {
+    yPercent: -(page1.offsetHeight / homePage.offsetHeight) * 100,
+    end: "+=1500px",
+    ease: "power1.inOut",
+})
+
+
+// page 2 animations 
 const container = document.querySelector('.container');
 const sections = gsap.utils.toArray('.container section');
 const mask = document.querySelector('.mask');
@@ -73,7 +112,6 @@ let tlEle1 = gsap.timeline({
         start: '0 0',
         end: 'bottom 30%',
         scrub: 1,
-        markers: true,
         end: "+=3000px",
         snap: 1/4,
     }
@@ -101,7 +139,6 @@ let tlEle2 = gsap.timeline({
         start: '0 0',
         end: 'bottom 30%',
         scrub: 1,
-        markers: true,
         end: "+=3000px",
         snap: 1/4,
     }
@@ -129,7 +166,6 @@ let tlEle3 = gsap.timeline({
         start: '0 0',
         end: 'bottom 30%',
         scrub: 1,
-        markers: true,
         end: "+=3000px",
         snap: 1/4,
     }
@@ -158,7 +194,6 @@ let tlEle4 = gsap.timeline({
         start: '0 0',
         end: 'bottom 30%',
         scrub: 1,
-        markers: true,
         end: "+=3000px",
         snap: 1/4,
     }
