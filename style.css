@@ -68,7 +68,8 @@ header{
     height: 3rem;
     margin: 0 auto;
     padding-left: 0.3vw;
-    background-color: var(--cont-hp);
+    /* background-color: var(--cont-hp); */
+    background-color: black;
 }
 
 .header-navbar {
@@ -173,7 +174,8 @@ img.menu-logo{
 .homepage{
     height:100vh;
     width: 100vw;
-    background-color: var(--cont-hp)
+    /* background-color: var(--cont-hp) */
+    background-color: black;
 }
 .home-page-bg-image{
     position: absolute;
@@ -192,12 +194,16 @@ img.menu-logo{
     flex-direction: column;
     font-size: 80px;
 }
+.full-stack-text{
+    color: var(--blue)
+}
 
 /* page 1 */
 .page-1{
     height: 100vh;
     width: 100vw;
-    background-color: rgb(19, 19, 19);
+    /* background-color: rgb(19, 19, 19); */
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,6 +227,9 @@ svg.turb{
     width: 80vw;
     z-index: 1;
 }
+.blue-text{
+    color: var(--blue);
+}
 
 /* page 2 */
 .container{
@@ -236,7 +245,7 @@ section{
     padding: 5vw 1vw;
     display: block;
 }
-
+/* hmvb
 .scroll-progress{
 position: absolute;
 width: 47vw;
@@ -254,7 +263,7 @@ width: 47vw;
 mask{
     width: 0;
 }
-
+*/
 section.projects-text{
     
     position: relative;
@@ -266,6 +275,7 @@ section.projects-text{
     justify-content: center; /* Add this line */
     flex-direction: column;
 }
+
     
 span#word1{
     position: relative;
@@ -284,7 +294,7 @@ span#word2{
 .page-3{
     height: 100vh;
     width: 100vw;
-    background-color: grey;
+    background-color: black;
 }
 
 .skills-container{
@@ -292,40 +302,104 @@ span#word2{
 }
 
 .front-end-skills{
-    background-color: red;
+    background-color: white;
     position: absolute;
     width: var(--skills-box-width);
     height: var(--skills-box-height);
     left: calc(50% -(var(--skills-box-width)/2));
     border-radius: 8px;
+    border: 4px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.front-end-skills-text{
+    background-color: grey;
+    width: 95%;
+    height: 93%;
+    border-radius: 8px;
+}
+
 .back-end-skills{
-    background-color: green;
+    background-color: white;
     position: absolute;
     width: var(--skills-box-width);
     height: var(--skills-box-height);
-    top: calc(50% - (var(--skills-box-height)/2));
+    top: calc(50vh - (var(--skills-box-height)/2));
     left: calc((var(--skills-box-width)*0.1));
+    border-radius: 8px;
+    border-radius: 8px;
+    border: 4px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-end-skills-text{
+    background-color: grey;
+    width: 95%;
+    height: 93%;
     border-radius: 8px;
 }
 .data-management-api-skills{
-    background-color: blue;
+    background-color: white;
     position: absolute;
     width: var(--skills-box-width);
     height: var(--skills-box-height);
-    top: calc(50% - (var(--skills-box-height)/2));
+    top: calc(50vh - (var(--skills-box-height)/2));
     left: calc(100% - (var(--skills-box-width)*1.1));
+    border-radius: 8px;
+    border-radius: 8px;
+    border: 4px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.data-management-api-skills-text{
+    background-color: grey;
+    width: 95%;
+    height: 93%;
     border-radius: 8px;
 }
 .functional-skills{
-    background-color: yellow;
+    background-color: white;
     position: absolute;
     width: var(--skills-box-width);
     height: var(--skills-box-height);
     left: calc(50% -(var(--skills-box-width)/2));
-    top:calc(100% - (var(--skills-box-height)*1.03));
+    top:calc(100vh - (var(--skills-box-height)*1.03));
+    border-radius: 8px;
+    border-radius: 8px;
+    border: 4px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dev-tools-text{
+    background-color: grey;
+    width: 95%;
+    height: 93%;
     border-radius: 8px;
 }
+
+.list-of-front-end-skills li,
+.list-of-back-end-skills li,
+.list-of-data-api li,
+.list-of-tools li {
+    list-style: none;
+    background-image: url('./icons/bullet-point.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0.8rem 0.8rem;
+    padding-left: 1.2rem;
+}
+.list-of-front-end-skills,
+.list-of-back-end-skills,
+.list-of-data-api,
+.list-of-tools{
+    margin: 0;
+    padding: 0;
+}
+
 
 /* page 4 */
 .page-4{
@@ -338,7 +412,8 @@ span#word2{
 }
 
 form{
-    background: #1B1C24;
+    /* background: #1B1C24; */
+    background: black;
     display: flex;
     flex-direction: column;
     height: 100vh;

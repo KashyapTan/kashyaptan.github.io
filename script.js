@@ -28,7 +28,7 @@ let page1ToHomePage = gsap.timeline({
         scrub: 1,
         end: "+=1500px",
         snap: 1,
-        markers: true,
+        markers: false,
     }
 })
 
@@ -360,10 +360,10 @@ homePageLink2.addEventListener('click', () =>{
     document.querySelector('#home-page').scrollIntoView({ behavior: 'smooth' });
 })
 
-const aboutPageLink = document.querySelector('#about-page-link')
-aboutPageLink.addEventListener('click', () =>{
-    document.querySelector('#about-page').scrollIntoView({ behavior: 'smooth' });
-})
+// const aboutPageLink = document.querySelector('#about-page-link')
+// aboutPageLink.addEventListener('click', () =>{
+//     document.querySelector('.page-1').scrollIntoView({ behavior: 'smooth' });
+// })
 
 const contactPageLink = document.querySelector('#contact-page-link')
 contactPageLink.addEventListener('click', () =>{
