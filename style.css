@@ -301,87 +301,100 @@ span#word2{
     padding-top: 3rem;
 }
 
+.skills-header h1{
+    margin-bottom: 1rem;
+}
+
 .front-end-skills{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     position: absolute;
     width: var(--skills-box-width);
     height: var(--skills-box-height);
     left: calc(50% -(var(--skills-box-width)/2));
     border-radius: 8px;
-    border: 4px solid var(--blue);
+    /* border: 4px solid var(--blue);  */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .front-end-skills-text{
-    background-color: grey;
+    background-color: white;
     width: 95%;
     height: 93%;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .back-end-skills{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     position: absolute;
     width: var(--skills-box-width);
     height: var(--skills-box-height);
     top: calc(50vh - (var(--skills-box-height)/2));
     left: calc((var(--skills-box-width)*0.1));
     border-radius: 8px;
-    border-radius: 8px;
-    border: 4px solid var(--blue);
+    /* border: 4px solid var(--blue); */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .back-end-skills-text{
-    background-color: grey;
+    background-color: white;
     width: 95%;
     height: 93%;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .data-management-api-skills{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     position: absolute;
     width: var(--skills-box-width);
     height: var(--skills-box-height);
     top: calc(50vh - (var(--skills-box-height)/2));
     left: calc(100% - (var(--skills-box-width)*1.1));
     border-radius: 8px;
-    border-radius: 8px;
-    border: 4px solid var(--blue);
+    /* border: 4px solid var(--blue); */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .data-management-api-skills-text{
-    background-color: grey;
+    background-color: white;
     width: 95%;
     height: 93%;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .functional-skills{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     position: absolute;
     width: var(--skills-box-width);
     height: var(--skills-box-height);
     left: calc(50% -(var(--skills-box-width)/2));
     top:calc(100vh - (var(--skills-box-height)*1.03));
     border-radius: 8px;
-    border-radius: 8px;
-    border: 4px solid var(--blue);
+    /* border: 4px solid var(--blue); */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .dev-tools-text{
-    background-color: grey;
+    background-color: white;
     width: 95%;
     height: 93%;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.list-of-front-end-skills li,
+/* .list-of-front-end-skills li,
 .list-of-back-end-skills li,
 .list-of-data-api li,
 .list-of-tools li {
@@ -391,13 +404,33 @@ span#word2{
     background-position: left center;
     background-size: 0.8rem 0.8rem;
     padding-left: 1.2rem;
+}*/
+.text-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
 }
-.list-of-front-end-skills,
-.list-of-back-end-skills,
-.list-of-data-api,
-.list-of-tools{
+.list-of-front-end-skills-1,
+.list-of-back-end-skills-1,
+.list-of-data-api-1,
+.list-of-tools-1,
+.list-of-front-end-skills-2,
+.list-of-back-end-skills-2,
+.list-of-data-api-2,
+.list-of-tools-2{
     margin: 0;
     padding: 0;
+}
+.list-of-front-end-skills-1 li,
+.list-of-back-end-skills-1  li,
+.list-of-data-api-1  li,
+.list-of-tools-1  li,
+.list-of-front-end-skills-2  li,
+.list-of-back-end-skills-2  li,
+.list-of-data-api-2  li,
+.list-of-tools-2  li{
+    padding: 0.7rem;
 }
 
 
