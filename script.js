@@ -10,6 +10,7 @@ let homePageTransition = gsap.timeline({
     scrollTrigger: {
         trigger: cardContainer,
         toggleActions: 'play none none none',
+        start: 'top 0',
         pin: true,
         scrub: 1,
         markers: false,
