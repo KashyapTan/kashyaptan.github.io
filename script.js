@@ -371,12 +371,25 @@ contactPageLink.addEventListener('click', () =>{
     document.querySelector('#contacts-page').scrollIntoView({ behavior: 'smooth' });
 })
 
+//code to create link onclick on small github logo on the projects card
+
+
 //smooth scroll
+// const lenis = new Lenis()
+
+// function raf(time) {
+//   lenis.raf(time)
+//   requestAnimationFrame(raf)
+// }
+
+// requestAnimationFrame(raf)
+
 const lenis = new Lenis()
 
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
+lenis.on('scroll', ScrollTrigger.update)
 
-requestAnimationFrame(raf)
+gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(0)

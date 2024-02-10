@@ -11,7 +11,7 @@
 }
 
 body{
-    height:100vh;
+    height: 100vh;
     width: 100vw;
     margin:0;
     overflow-x: hidden;
@@ -191,7 +191,7 @@ img.menu-logo{
     display: flex;
     justify-content: center;
     align-items:center;
-    font-size: 80px;
+    font-size: 5vw;
 }
 
 .intro-text-container{
@@ -227,14 +227,19 @@ svg.turb{
 .displacement {
     filter: url(#displacementFilter);
 }
-
+.about-me-text-container{
+    position: absolute;
+    width: 90vw;
+    height: 80vh;
+    z-index: 1;
+    container-type: inline-size;
+}
 .aboutme-text{
     position: absolute;
     color: white;
-    font-size: 60px;
-    text-wrap: wrap;
-    width: 80vw;
-    z-index: 1;
+    font-size: 4.5cqi;
+    text-wrap: balance;
+
 }
 .blue-text{
     color: var(--blue);
@@ -249,17 +254,34 @@ svg.turb{
     background-color: black;
 }
 
-section{
+section.card-holder-section{
     width: 50vw;
     padding: 5vw 1vw;
     display: block;
+    display: flex;
+    align-items: center;
 }
-/* hmvb
+section.card-holder-section svg{
+    width: fit-content;
+    height: 75vh;
+}
+section.card-holder-section img{
+    width: fit-content;
+    height: 75vh;
+}
+.small-github-icon-link{
+    width: 10px;
+    height: 10px;
+    align-self: flex-end;
+}
+
+
 .scroll-progress{
 position: absolute;
 width: 47vw;
 
 }
+
 .scroll-container{
     width: 100%;
     height: 3rem;
@@ -272,7 +294,7 @@ width: 47vw;
 mask{
     width: 0;
 }
-*/
+
 section.projects-text{
     
     position: relative;
@@ -312,26 +334,30 @@ span#word2{
     height: calc(100% - 3rem);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
+    justify-content: center;
+
 }
 .top-positioned-text, .bottom-positioned-text {
-    flex-basis: 100%;    /* to force .bottom to wrap */
+    /* flex-basis: 100%; */
     display: flex;
     justify-content: space-between;
+    width: 80vw;
   }
+.bottom-positioned-text{
+    align-items: flex-end;
+}
 .top-left-text{
     width: fit-content;
     height: fit-content;
     color: white;
-    padding-left: 5.8rem;
+    padding-top: 2.8rem;
     font-size: 5rem;
 }
 .top-right-text{
     width: fit-content;
     height: fit-content;
     color: var(--blue);
-    padding-right: 6rem;
+    padding-top: 2.8rem;
     font-size: 5rem;
 
 }
@@ -339,17 +365,15 @@ span#word2{
     width: fit-content;
     height: fit-content;
     color: var(--blue);
-    padding-left: 5.8rem;
     font-size: 5rem;
-
+    padding-bottom: 2.8rem;
 }
 .bottom-right-text{
     width: fit-content;
     height: fit-content;
     color: white;
-    padding-right: 6rem;
     font-size: 5rem;
-
+    padding-bottom: 2.8rem;
 }
 .skills-container{
     /* padding-top: 3rem; */
@@ -494,12 +518,14 @@ span#word2{
 
 /* page 4 */
 .page-4{
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: left;
+    margin: 0;
+    padding: 0;
 }
 
 form{
@@ -509,6 +535,8 @@ form{
     flex-direction: column;
     height: 100vh;
     width: 60vw;
+    margin: 0;
+    padding: 0;
 }
 
 form h1{
@@ -568,23 +596,7 @@ form button{
     margin-top: 20px;
 }
 
-.social-images {
-    position: relative;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    width: 40vw;
-    height: 100vh;
-}
 
-span.socials-bg-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-30%, -50%) rotate(-90deg);
-    font-size: 170px;
-    color: #EEEEEE;
-}
 
 /* .dialog-text{
     position: relative;
@@ -607,11 +619,7 @@ span.socials-bg-text {
 } */
 /* ... other styles ... */
 
-li.social-icons {
-    position: relative;
-    width: 120px;
-    z-index: 999;
-}
+
 
 .dialog-text {
     position: absolute;
@@ -636,19 +644,46 @@ li.social-icons {
 .email-image:hover{
     cursor: pointer;
 } 
+.social-icon-track-container{
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.social-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 100vh;
+}
 
+.socials-bg-text {
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    transform: rotate(-90deg);
+    font-size: 22vh;
+    color: #EEEEEE;
+}
+li.social-icons {
+    position: relative;
+    width: 120px;
+    z-index: 999;
+}
 .social-icon-track{
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 82px;
-    padding: 0px;
+    gap: 13vh;
+    padding-left: 8vw;
+    /* padding: 0px;
     margin-left: 135px;
-    padding-top: 16px;
+    padding-top: 16px; */
 }
 
-.social-icon-track-container{
-    width: 0;
-}
+
 
 
