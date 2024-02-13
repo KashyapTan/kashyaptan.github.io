@@ -414,7 +414,7 @@ span#word2{
     width: var(--skills-box-width);
     height: var(--skills-box-height);
     top: calc(50vh - (var(--skills-box-height)/2));
-    left: calc(0vw - ((var(--skills-box-width)*(0.1))));
+    left: calc(((var(--skills-box-width)*(0.1))));
     border-radius: 8px;
     display: flex;
     align-items: center;

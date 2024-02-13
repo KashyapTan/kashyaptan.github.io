@@ -98,9 +98,6 @@ let tl = gsap.timeline({
         pin: true,
         markers: false,
         end: "+=3000px",
-        onLeaveBack: function() {
-            tl.progress(0).kill()
-        },
     }
 })
 
