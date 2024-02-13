@@ -94,14 +94,18 @@ const element4 = document.querySelector('.back-end-skills')
 let tl = gsap.timeline({
     scrollTrigger: {
         trigger: page3,
-        toggleActions: 'play none none none',
+        toggleActions: 'play none pause pause',
         pin: true,
         markers: false,
         end: "+=3000px",
+        onLeaveBack: function() {
+            tl.progress(0).kill()
+        },
     }
 })
 
 tl.to(page3,{})
+
 
 
 
@@ -115,6 +119,7 @@ let tlEle1 = gsap.timeline({
         scrub: 1,
         end: "+=3000px",
         snap: 1/4,
+        // once: true,
     }
 })
 
@@ -123,11 +128,11 @@ for(let i=0;i<4;i++){
     tlEle1.to(element1, {
         left: () =>{
             var element2Positions = element2.getBoundingClientRect()
-            return element2Positions.left
+            return Math.ceil(element2Positions.left)
         },
         top: () =>{
             var element2Positions = element2.getBoundingClientRect()
-            return element2Positions.top
+            return Math.ceil(element2Positions.top)
         },
         ease: "power1.inOut",
     })
@@ -142,6 +147,7 @@ let tlEle2 = gsap.timeline({
         scrub: 1,
         end: "+=3000px",
         snap: 1/4,
+        // once: true,
     }
 })
 
@@ -149,11 +155,11 @@ for(let i=0;i<4;i++){
     tlEle2.to(element2, {
         left: () =>{
             var element3Positions = element3.getBoundingClientRect()
-            return element3Positions.left
+            return Math.ceil(element3Positions.left)
         },
         top: () =>{
             var element3Positions = element3.getBoundingClientRect()
-            return element3Positions.top
+            return Math.ceil(element3Positions.top)
         },
         ease: "power1.inOut",
     })
@@ -169,6 +175,7 @@ let tlEle3 = gsap.timeline({
         scrub: 1,
         end: "+=3000px",
         snap: 1/4,
+        // once: true,
     }
 })
 
@@ -177,11 +184,11 @@ for(let i=0;i<4;i++){
     tlEle3.to(element3, {
         left: () =>{
             var element4Positions = element4.getBoundingClientRect()
-            return element4Positions.left
+            return Math.ceil(element4Positions.left)
         },
         top: () =>{
             var element4Positions = element4.getBoundingClientRect()
-            return element4Positions.top
+            return Math.ceil(element4Positions.top)
         },
         ease: "power1.inOut",
     })
@@ -197,6 +204,7 @@ let tlEle4 = gsap.timeline({
         scrub: 1,
         end: "+=3000px",
         snap: 1/4,
+        // once: true,
     }
 })
 
@@ -204,11 +212,12 @@ for(let i=0;i<4;i++){
     tlEle4.to(element4, {
         left: () =>{
             var element1Positions = element1.getBoundingClientRect()
-            return element1Positions.left
+            console.log(Math.ceil(element1Positions.left))
+            return Math.ceil(element1Positions.left)
         },
         top: () =>{
             var element1Positions = element1.getBoundingClientRect()
-            return element1Positions.top
+            return Math.ceil(element1Positions.top)
         },
         ease: "power1.inOut",
     })
