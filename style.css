@@ -299,9 +299,9 @@ section.projects-text{
     
     position: relative;
     color: white;
-    font-size: 150px;
+    font-size: 20vh;
     margin-right: 50vw;
-    width: 200px;
+    width: 15vh;
     display: flex; /* Add this line */
     justify-content: center; /* Add this line */
     flex-direction: column;
@@ -310,13 +310,13 @@ section.projects-text{
     
 span#word1{
     position: relative;
-    left: 50%;
+    padding-left: 4vw;
     
 }
 
 span#word2{
     position: relative;
-    left: 100%;
+    padding-left: 11vw;
     color:var(--blue);
 
 }
