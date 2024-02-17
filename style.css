@@ -229,17 +229,18 @@ svg.turb{
 }
 .about-me-text-container{
     position: absolute;
-    width: 90vw;
+    width: 80vw;
     height: 80vh;
     z-index: 1;
     container-type: inline-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .aboutme-text{
-    position: absolute;
     color: white;
-    font-size: 4.5cqi;
+    font-size: 4.2cqi;
     text-wrap: balance;
-
 }
 .blue-text{
     color: var(--blue);
