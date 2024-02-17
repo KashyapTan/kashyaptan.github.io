@@ -163,7 +163,7 @@ img.menu-logo{
     position: fixed;
     z-index: 999;
     margin-top: 0.35%;
-    left:96.2vw;
+    right:1vw;
 }
 
 .nav-link{
@@ -300,24 +300,33 @@ section.projects-text{
     
     position: relative;
     color: white;
-    font-size: 20vh;
-    margin-right: 50vw;
-    width: 15vh;
-    display: flex; /* Add this line */
-    justify-content: center; /* Add this line */
+    font-size: 15vh;
+    margin-right: 15vw;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
+}
+
+#explanation-text{
+    position: relative;
+    color: white;
+    font-size: 2.5vh;
+    width: 100%;
+    padding-left: 12vw;
+    opacity: 0.1;
 }
 
     
 span#word1{
     position: relative;
-    padding-left: 4vw;
+    padding-left: 12vw;
     
 }
 
 span#word2{
     position: relative;
-    padding-left: 11vw;
+    padding-left: 12vw;
     color:var(--blue);
 
 }
