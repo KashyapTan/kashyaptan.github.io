@@ -91,6 +91,7 @@ const element2 = document.querySelector('.data-management-api-skills')
 const element3 = document.querySelector('.functional-skills')
 const element4 = document.querySelector('.back-end-skills')
 
+
 let tl = gsap.timeline({
     scrollTrigger: {
         trigger: page3,
@@ -132,6 +133,14 @@ for(let i=0;i<4;i++){
             return Math.ceil(element2Positions.top)
         },
         ease: "power1.inOut",
+        opacity: () =>{
+            if(i===3){
+                return 1
+            }
+            else{
+                return 0.1
+            }
+        },
     })
 }
 //move element 2 to element 3's position
@@ -159,6 +168,14 @@ for(let i=0;i<4;i++){
             return Math.ceil(element3Positions.top)
         },
         ease: "power1.inOut",
+        opacity: () =>{
+            if(i===2){
+                return 1
+            }
+            else{
+                return 0.1
+            }
+        },
     })
 }
 
@@ -188,6 +205,14 @@ for(let i=0;i<4;i++){
             return Math.ceil(element4Positions.top)
         },
         ease: "power1.inOut",
+        opacity: () =>{
+            if(i===1){
+                return 1
+            }
+            else{
+                return 0.1
+            }
+        },
     })
 }
 
@@ -209,7 +234,6 @@ for(let i=0;i<4;i++){
     tlEle4.to(element4, {
         left: () =>{
             var element1Positions = element1.getBoundingClientRect()
-            console.log(Math.ceil(element1Positions.left))
             return Math.ceil(element1Positions.left)
         },
         top: () =>{
@@ -217,8 +241,21 @@ for(let i=0;i<4;i++){
             return Math.ceil(element1Positions.top)
         },
         ease: "power1.inOut",
+        opacity: () =>{
+            if(i===0){
+                return 1
+            }
+            else{
+                return 0.1
+            }
+        }
     })
 }
+
+
+
+
+
 
 //text animations
 

@@ -314,7 +314,7 @@ span#explanation-text{
     color: white;
     font-size: 2vh;
     padding-left: 12.5vw;
-    opacity: 0.1;
+    opacity: 0.5;
 }
 
     
@@ -338,17 +338,31 @@ span#word2{
     background-color: black;
 }
 .skills-page-text-container{
-    padding-top: 3rem;
     position: absolute;
     width: 100%;
-    height: calc(100% - 3rem);
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-
+    align-items: center;
+    flex-direction: column;
 }
-.top-positioned-text, .bottom-positioned-text {
-    /* flex-basis: 100%; */
+.skills-page-text-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1vw;
+    width: 40vw;
+    font-size: 3.2vw;
+    color: white;
+    text-align: center;
+}
+.explore-text{
+    color: white;
+    font-size: 1vw;
+    opacity: 0.5;
+}
+/* .top-positioned-text, .bottom-positioned-text {
+
     display: flex;
     justify-content: space-between;
     width: 80vw;
@@ -384,7 +398,9 @@ span#word2{
     color: white;
     font-size: 5rem;
     padding-bottom: 2.8rem;
-}
+} */
+
+
 .skills-container{
     /* padding-top: 3rem; */
     width: 100vw;
@@ -394,6 +410,9 @@ span#word2{
 
 .skills-header h1{
     margin-bottom: 1rem;
+}
+.skills-box{
+    opacity: 1;
 }
 
 .front-end-skills{
@@ -407,6 +426,8 @@ span#word2{
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    z-index: 6;
 }
 .front-end-skills-text{
     background-color: white;
@@ -429,6 +450,7 @@ span#word2{
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.1;
 }
 .back-end-skills-text{
     background-color: white;
@@ -450,6 +472,7 @@ span#word2{
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.1;
 }
 .data-management-api-skills-text{
     background-color: white;
@@ -472,6 +495,7 @@ span#word2{
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.1;
 }
 .dev-tools-text{
     background-color: white;
@@ -483,17 +507,7 @@ span#word2{
     flex-direction: column;
 }
 
-/* .list-of-front-end-skills li,
-.list-of-back-end-skills li,
-.list-of-data-api li,
-.list-of-tools li {
-    list-style: none;
-    background-image: url('./icons/bullet-point.png');
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 0.8rem 0.8rem;
-    padding-left: 1.2rem;
-}*/
+
 .text-container{
     display: flex;
     flex-direction: row;
