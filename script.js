@@ -49,7 +49,7 @@ const mask = document.querySelector('.mask');
 
 let scrollTween = gsap.to(sections, {
     // xPercent: -430,
-    xPercent: -100 * (sections.length - 1.5),
+    xPercent: -110 * (sections.length - 1.5),
     ease: "none",
     scrollTrigger: {
         trigger: ".container",
@@ -75,6 +75,48 @@ gsap.to(mask, {
         end: () => {
             const containerWidth = container.offsetWidth;
             const lastSection = sections[sections.length - 1];
+            const lastSectionRight = lastSection.offsetLeft + lastSection.offsetWidth;
+            const viewportWidth = window.innerWidth;
+            const scrollEnd = lastSectionRight - containerWidth + 1 * (viewportWidth / 100);
+            return `+=${scrollEnd}`;
+        },
+        scrub: 1,
+    }
+});
+
+// GSAP animations for page 3
+
+const skillsContainer = document.querySelector('.skills-page-container');
+const skillsSections = gsap.utils.toArray('.skills-page-container section');
+const skillsSectionmask = document.querySelector('.mask2');
+
+let scrollTween2 = gsap.from(skillsSections, {
+    xPercent: -90 * (skillsSections.length - 1.5),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".skills-page-container",
+      pin: true,
+      scrub: 1,
+      snap: 1 / (skillsSections.length - 1),
+      end: () => {
+        const containerWidth = skillsContainer.offsetWidth;
+        const lastSection = skillsSections[skillsSections.length - 1];
+        const lastSectionRight = lastSection.offsetLeft + lastSection.offsetWidth;
+        const viewportWidth = window.innerWidth;
+        const scrollEnd = lastSectionRight - containerWidth + 1 * (viewportWidth / 100);
+        return `+=${scrollEnd}`;
+      },
+    }
+  });
+
+gsap.from(skillsSectionmask, {
+    width: '100%',
+    scrollTrigger: {
+        trigger: '.skills-page',
+        start: 'top left',
+        end: () => {
+            const containerWidth = skillsContainer.offsetWidth;
+            const lastSection = skillsSections[skillsSections.length - 1];
             const lastSectionRight = lastSection.offsetLeft + lastSection.offsetWidth;
             const viewportWidth = window.innerWidth;
             const scrollEnd = lastSectionRight - containerWidth + 1 * (viewportWidth / 100);
