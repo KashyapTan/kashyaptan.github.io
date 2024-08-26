@@ -262,6 +262,23 @@ section.card-holder-section{
     display: flex;
     align-items: center;
 }
+section.card-holder-section-holder{
+    width: 12vw;
+    padding: 5vw 1vw;
+    display: block;
+    display: flex;
+    align-items: center;
+}
+
+section.card-holder-section-holder svg{
+    width: fit-content;
+    height: 75vh;
+}
+section.card-holder-section-holder img{
+    width: fit-content;
+    height: 75vh;
+}
+
 section.card-holder-section svg{
     width: fit-content;
     height: 75vh;
@@ -308,6 +325,17 @@ section.projects-text{
     flex-direction: column;
     text-align: left;
 }
+section.projects-text-2{
+    position: relative;
+    color: white;
+    font-size: 15vh;
+    margin-left: 40vw;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: right;
+}
 
 span#explanation-text{
     position: relative;
@@ -332,6 +360,19 @@ span#word2{
 }
 
 /* page 3*/
+/* .skills-page{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+} */
+.skills-page-container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    gap:4vmin;
+    background-color: black;
+}
+
 .page-3{
     height: 100vh;
     width: 100vw;
