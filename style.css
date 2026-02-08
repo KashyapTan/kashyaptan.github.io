@@ -1,4 +1,4 @@
-:root{
+﻿:root{
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     --blue: #0255FF;
@@ -283,7 +283,7 @@ section.card-holder-section svg{
     width: fit-content;
     height: 75vh;
 }
-section.card-holder-section img{
+section.card-holder-section > img{
     width: fit-content;
     height: 75vh;
 }
@@ -329,7 +329,7 @@ section.projects-text-2{
     position: relative;
     color: white;
     font-size: 15vh;
-    margin-left: 40vw;
+    margin-left: 50vw;
     width: fit-content;
     display: flex;
     justify-content: center;
@@ -580,7 +580,7 @@ span#word2{
 
 /* page 4 */
 .page-4{
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     background-color: white;
     display: flex;
@@ -588,6 +588,7 @@ span#word2{
     justify-content: left;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 form{
@@ -595,35 +596,32 @@ form{
     background: black;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 100vh;
     width: 60vw;
     margin: 0;
-    padding: 0;
+    padding: 0 10%;
+    box-sizing: border-box;
 }
 
 form h1{
-    position: relative;
-    left: 15%;
     margin: 0;
     padding: 0;
     color: white;
-    margin-bottom: 20px;
-    margin-top: 17%;
-    font-size: 60px;
+    margin-bottom: 30px;
+    font-size: clamp(40px, 5vw, 60px);
 }
 
 form input, form textarea{
-    position: relative;
     border: 0;
-    margin:  10px 0;
-    padding: 20px;
+    margin: 10px 0;
+    padding: 20px 0;
     outline: none;
     background:none;
     padding-left: 3px;
     font-size: 16px;
     border-bottom: 1px solid white;
-    width: 40vw;
-    left: 15%;
+    width: 100%;
 }
 
 form input#name, form input#email, form textarea#message{
@@ -652,9 +650,7 @@ form button{
     border: 0;
     outline: none;
     cursor: pointer;
-    width: 15vw;
-    position: relative;
-    left: 15%;
+    width: min(200px, 100%);
     margin-top: 20px;
 }
 
@@ -706,46 +702,233 @@ form button{
 .email-image:hover{
     cursor: pointer;
 } 
-.social-icon-track-container{
+.social-icon-track-container {
     width: 40vw;
     height: 100vh;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-}
-.social-images {
+    justify-content: center;
+    gap: 9vw;
     position: relative;
+    overflow: hidden;
+}
+
+.social-images {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40vw;
-    height: 100vh;
+    width: fit-content;
+    height: 100%;
 }
 
 .socials-bg-text {
-    position: absolute;
-    /* top: 50%;
-    left: 50%; */
-    transform: rotate(-90deg);
-    font-size: 22vh;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: clamp(180px, 18vh, 22vh);
+    letter-spacing: 0.5rem;
     color: #EEEEEE;
+    white-space: nowrap;
+    display: block;
+    line-height: 1;
+    text-align: center;
 }
+
 li.social-icons {
     position: relative;
-    width: 120px;
-    z-index: 999;
+    width: clamp(140px, 8vw, 140px);
+    z-index: 2;
+    transition: transform 0.3s ease;
 }
-.social-icon-track{
-    position: relative;
+
+li.social-icons:hover {
+    transform: scale(1.1);
+}
+
+li.social-icons svg {
+    width: 100%;
+    height: auto;
+}
+
+.social-icon-track {
     display: flex;
     flex-direction: column;
-    gap: 13vh;
-    padding-left: 8vw;
-    /* padding: 0px;
-    margin-left: 135px;
-    padding-top: 16px; */
+    gap: 9vh;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+    list-style: none;
+    align-items: center;
 }
 
 
 
 
+
+/* Portfolio Card Styles */
+:root {
+    --card-bg: #141414;
+    --card-text-white: #ffffff;
+    --card-text-dim: #aaaaaa;
+}
+
+.card {
+    width: 480px;
+    min-height: 720px;
+    background-color: var(--card-bg);
+    color: var(--card-text-white);
+    padding: 45px 20px 45px 20px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid #252525;
+}
+.company-header {
+    font-size: 33px; 
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    color: var(--blue);
+}
+
+.role-subtitle {
+    font-size: 22px; 
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    color: var(--card-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mission-statement {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: var(--card-text-white);
+    font-weight: 500;
+}
+
+.tech-list {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 0 30px 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #efefef;
+    flex-grow: 1; 
+}
+
+.tech-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+}
+
+.tech-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--card-text-dim);
+}
+
+.footer-icons {
+    display: flex;
+    gap: 32px;
+    margin-top: auto; 
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    flex-wrap: wrap;
+}
+
+.icon-svg {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+
+/* Skills Grid Styles */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+    width: 100%;
+    align-content: space-between;
+}
+
+.tech-grid-item {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 15px;
+    width: 100%;
+    padding: 0 5px;
+    font-size: 21px;
+    color: var(--card-text-white);
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.tech-grid-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.skills-page .company-header {
+    text-transform: none !important;
+    letter-spacing: -1px !important;
+    font-size: 50px !important;
+    margin-bottom: 25px !important;
+}
+
+@media (max-width: 1024px) {
+    .page-4 {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        min-height: 100vh;
+    }
+    form {
+        width: 100vw;
+        height: auto;
+        padding: 80px 10%;
+    }
+    .social-icon-track-container {
+        width: 100vw;
+        height: auto;
+        padding: 80px 0;
+        min-height: 300px;
+    }
+    .social-icon-track {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    li.social-icons {
+        width: 60px;
+    }
+    .socials-bg-text {
+        font-size: 15vw;
+        transform: none;
+        writing-mode: horizontal-tb;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .social-images {
+        position: relative;
+        height: auto;
+        flex-direction: column;
+    }
+    .social-icon-track-container {
+        flex-direction: column;
+    }
+}

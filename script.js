@@ -1,6 +1,209 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+const portfolioData = [
+    {
+        company: "Coforge",
+        role: "AI/ML Engineer Intern",
+        mission: "Built a root cause analysis engine to diagnose and fix failures in large-scale microservice applications, reducing the manual issue resolution process for SRE's.",
+        tech: [
+            "Cloud: Docker (ECR), Kubernetes (EKS)",
+            "Data: PySpark, PyG Graph Neural Networks",
+            "AI: LightRAG, Neo4j Knowledge Graphs, Faiss, Redis",
+            "Inference: vLLM, OpenAI API, FastAPI"
+        ],
+        icons: ["docker", "kubernetes", "PyTorch", "fastapi", "python"]
+    },
+    {
+        company: "Rutgers Aresty",
+        role: "Research Assistant",
+        mission: "Developed a multiplayer system for scientific experiments that allows multiple users to interact concurrently with minimal delay.",
+        tech: [
+            "Engine: Unity & C# (.NET)",
+            "Cloud: Firebase Real-time Database",
+            "Systems: Concurrent non-blocking data streams",
+            "Analytics: Time-series data logging"
+        ],
+        icons: ["unity", ".NET", "firebase", "Python"]
+    },
+    {
+        company: "BlaZop",
+        role: "SWE Intern",
+        mission: "Developed an intelligent chatbot to help clients navigate Blazop's SaaS platform and automated the generation of training data from internal documents.",
+        tech: [
+            "Web: Angular, Python",
+            "AI: LLaMA 3.1, LangChain, Ollama",
+            "Storage: ChromaDB (Vector Database)",
+            "Vision: OpenAI CLIP image embeddings"
+        ],
+        icons: ["angular", "docker", "python", "Ollama", "langchain"]
+    },
+    {
+        company: "First Move Partners",
+        role: "SWE Intern",
+        mission: "Built a central dashboard for hospital administrators to track staff and medical resources in real-time to improve operational efficiency.",
+        tech: [
+            "Frontend: React, Axios",
+            "Backend: Node.js, Express.js",
+            "Database: MongoDB",
+            "API Testing: Postman"
+        ],
+        icons: ["react", "nodedotjs", "mongodb", "postman"]
+    },
+    {
+        company: "Clueless",
+        role: "Open Source Contributor",
+        mission: "Built a desktop application that allows users to have voice and text conversations with AI about whatever is currently on their screen.",
+        tech: [
+            "App: Electron, React, TypeScript",
+            "Logic: Python, FastAPI, WebSockets",
+            "Systems: Asyncio, threading, cross-thread event loops",
+            "AI: Ollama API integration"
+        ],
+        icons: ["electron", "react", "typescript", "fastapi", "python"]
+    },
+    {
+        company: "NBA Terminal",
+        role: "ML & Data Science",
+        mission: "Designed a model to predict player points daily and built a real-time suite for NBA analytics and strategy validation.",
+        tech: [
+            "Models: XGBoost Regressor, Scikit-learn",
+            "Data: NBA API, NumPy, Pandas",
+            "Logic: Mean Reversion & Zone Matchup Score"
+        ],
+        icons: ["Numpy", "scikitlearn", "pandas", "python"]
+    },
+    {
+        company: "Movie Recommender",
+        role: "ML & Data Science",
+        mission: "Engineered a movie recommendation system that predicts which films a user will enjoy based on their past viewing history and ratings.",
+        tech: [
+            "Compute: Apache Spark, Python",
+            "Libraries: NumPy, Pandas",
+            "Algorithm: Matrix Factorization (SVD)",
+            "Visualization: Matplotlib, Seaborn"
+        ],
+        icons: ["numpy", "apachespark", "pandas", "python"]
+    }
+];
+
+const portfolioCardsContainer = document.getElementById('portfolio-cards-row');
+if (portfolioCardsContainer) {
+    portfolioData.forEach(item => {
+        portfolioCardsContainer.innerHTML += `
+            <section class="card-holder-section">
+                <div class="card">
+                    <div class="company-header">${item.company}</div>
+                    <div class="role-subtitle">${item.role}</div>
+                    <div class="mission-statement">${item.mission}</div>
+                    <ul class="tech-list">
+                        ${item.tech.map(t => `<li>${t}</li>`).join('')}
+                    </ul>
+                    <div class="footer-icons">
+                        ${item.icons.map(icon => `
+                            <img class="icon-svg" src="https://cdn.simpleicons.org/${icon}" alt="${icon}" />
+                        `).join('')}
+                    </div>
+                </div>
+            </section>
+        `;
+    });
+}
+
+const skillsData = [
+    {
+        category: "Dev Tools",
+        skills: [
+            { name: "Docker", icon: "docker" },
+            { name: "GitHub", icon: "github" },
+            { name: "VSC", icon: "vs-code-svgrepo-com.svg" },
+            { name: "Git", icon: "git" },
+            { name: "Claude Code", icon: "claude" },
+            { name: "Postman", icon: "postman" },
+            { name: "Github Copilot", icon: "githubcopilot" },
+            { name: "Linux", icon: "linux" },
+        ]
+    },
+    {
+        category: "Front-End",
+        skills: [
+            { name: "React", icon: "react" },
+            { name: "Angular", icon: "angular-svgrepo-com.svg" },
+            { name: "HTML", icon: "html5" },
+            { name: "CSS", icon: "css" },
+            { name: "Tailwind", icon: "tailwindcss" },
+            { name: "Bootstrap", icon: "bootstrap" },
+            { name: "Figma", icon: "figma-svgrepo-com.svg" },
+            { name: "GSAP", icon: "greensock" }
+        ]
+    },
+    {
+        category: "Data",
+        skills: [
+            { name: "Azure", icon: "azure-svgrepo-com.svg" },
+            { name: "Firebase", icon: "firebase" },
+            { name: "AWS", icon: "aws-svgrepo-com.svg" },
+            { name: "ChromaDB", icon: "ChromaDB.svg" },
+            { name: "GCP", icon: "googlecloud" },
+            { name: "MongoDB", icon: "mongodb" },
+            { name: "Spark", icon: "apachespark" },
+            { name: "Hadoop", icon: "apachehadoop" }
+        ]
+    },
+    {
+        category: "AI/ML",
+        skills: [
+            { name: "PyTorch", icon: "pytorch" },
+            { name: "TensorFlow", icon: "tensorflow" },
+            { name: "Scikit-learn", icon: "scikitlearn" },
+            { name: "OpenAI API", icon: "openai-svgrepo-com.svg" },
+            { name: "Hugging Face", icon: "huggingface" },
+            { name: "Ollama", icon: "ollama" },
+            { name: "LangChain", icon: "langchain" },
+            { name: "Anthropic API", icon: "anthropic" }
+        ]
+    },
+    {
+        category: "Languages",
+        skills: [
+            { name: "Python", icon: "python" },
+            { name: "JavaScript", icon: "javascript" },
+            { name: "Java", icon: "java-4-logo-svgrepo-com.svg" },
+            { name: "C++", icon: "cplusplus" },
+            { name: "C", icon: "c" },
+            { name: "TypeScript", icon: "typescript" },
+            { name: "SQL", icon: "postgresql" },
+            { name: "Assembly", icon: "assembly-svgrepo-com.svg" }
+        ]
+    },
+];
+
+const skillsCardsContainer = document.getElementById('skills-cards-row');
+if (skillsCardsContainer) {
+    skillsData.forEach(item => {
+        skillsCardsContainer.innerHTML += `
+            <section class="card-holder-section">
+                <div class="card">
+                    <div class="company-header">${item.category}</div>
+                    <div class="tech-grid">
+                        ${item.skills.map(s => {
+                            const iconUrl = s.icon.endsWith('.svg') 
+                                ? `icons/svgs/${s.icon}` 
+                                : `https://cdn.simpleicons.org/${s.icon}`;
+                            return `
+                                <div class="tech-grid-item">
+                                    <img class="tech-grid-icon" src="${iconUrl}" alt="${s.name}" />
+                                    <span>${s.name}</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            </section>
+        `;
+    });
+}
+
 //home page animations
 const homePage = document.querySelector('.homepage')
 const page1 = document.querySelector('.page-1')
@@ -103,7 +306,7 @@ let scrollTween2 = gsap.from(skillsSections, {
         const lastSection = skillsSections[skillsSections.length - 1];
         const lastSectionRight = lastSection.offsetLeft + lastSection.offsetWidth;
         const viewportWidth = window.innerWidth;
-        const scrollEnd = lastSectionRight - containerWidth + 1 * (viewportWidth / 100);
+        const scrollEnd = lastSectionRight - containerWidth + 30 * (viewportWidth / 100);
         return `+=${scrollEnd}`;
       },
     }
@@ -119,7 +322,7 @@ gsap.from(skillsSectionmask, {
             const lastSection = skillsSections[skillsSections.length - 1];
             const lastSectionRight = lastSection.offsetLeft + lastSection.offsetWidth;
             const viewportWidth = window.innerWidth;
-            const scrollEnd = lastSectionRight - containerWidth + 1 * (viewportWidth / 100);
+            const scrollEnd = lastSectionRight - containerWidth + 30 * (viewportWidth / 100);
             return `+=${scrollEnd}`;
         },
         scrub: 1,
@@ -402,8 +605,8 @@ function sendMail(){
         message: document.getElementById('message').value
     }
 
-    const serviceID = 'service_qfmvlmr'
-    const templateID = 'template_0jxzgyq'
+    const serviceID = 'service_h4cc44g'
+    const templateID = 'template_2uics96'
 
     if(data.name===''||data.email===''||data.message===''){
         return
