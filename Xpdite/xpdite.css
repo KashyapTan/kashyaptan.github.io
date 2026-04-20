@@ -1,0 +1,273 @@
+/* Shared styles for the Xpdite compliance pages */
+
+:root {
+    --xpdite-surface: #141414;
+    --xpdite-surface-soft: #0e1212;
+    --xpdite-border: #252525;
+    --xpdite-text: #ffffff;
+    --xpdite-text-dim: #b3bdd3;
+}
+
+body.xpdite-body {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    color: var(--xpdite-text);
+    background-color: #000000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.xpdite-body *,
+.xpdite-body *::before,
+.xpdite-body *::after {
+    box-sizing: border-box;
+}
+
+.xpdite-background {
+    min-height: 100vh;
+    width: 100%;
+    background:
+        radial-gradient(1000px 500px at 90% -8%, rgba(2, 85, 255, 0.16), rgba(2, 85, 255, 0) 60%),
+        radial-gradient(900px 450px at -5% 10%, rgba(2, 85, 255, 0.1), rgba(2, 85, 255, 0) 62%),
+        #000000;
+}
+
+.xpdite-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1a1a1a;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+}
+
+.xpdite-topbar-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    min-height: 3rem;
+    padding: 0.65rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.xpdite-brand {
+    color: var(--blue);
+    font-size: 1.12rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.xpdite-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.xpdite-nav a,
+.xpdite-footer-links a,
+.xpdite-link {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.xpdite-nav a:hover,
+.xpdite-footer-links a:hover,
+.xpdite-link:hover {
+    color: #eeeeee;
+}
+
+.xpdite-shell {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 3.2rem 1.25rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.xpdite-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.4rem;
+    align-items: stretch;
+}
+
+.xpdite-logo-card,
+.xpdite-card,
+.xpdite-legal-card {
+    background-color: var(--xpdite-surface);
+    border: 1px solid var(--xpdite-border);
+    border-radius: 20px;
+}
+
+.xpdite-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+}
+
+.xpdite-logo {
+    width: min(100%, 250px);
+    height: auto;
+}
+
+.xpdite-card,
+.xpdite-legal-card {
+    padding: 1.6rem;
+}
+
+.xpdite-eyebrow {
+    margin: 0 0 0.6rem;
+    color: var(--xpdite-text-dim);
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.xpdite-title {
+    margin: 0;
+    color: var(--blue);
+    font-size: clamp(2rem, 6vw, 3.7rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+}
+
+.xpdite-subtitle {
+    margin: 0.9rem 0 0;
+    color: #f0f3ff;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    line-height: 1.65;
+}
+
+.xpdite-section-title {
+    margin: 0;
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    line-height: 1.25;
+    color: #ffffff;
+}
+
+.xpdite-body-text {
+    margin: 0.9rem 0 0;
+    color: #e3e8f8;
+    line-height: 1.72;
+}
+
+.xpdite-list {
+    margin: 1rem 0 0;
+    padding-left: 1.3rem;
+    list-style: disc;
+    color: #e3e8f8;
+}
+
+.xpdite-list li {
+    margin: 0.65rem 0;
+    line-height: 1.64;
+}
+
+.xpdite-note {
+    margin-top: 1rem;
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
+    border: 1px solid rgba(2, 85, 255, 0.55);
+    background-color: rgba(2, 85, 255, 0.08);
+    color: #dce8ff;
+    line-height: 1.65;
+}
+
+.xpdite-policy-callout {
+    margin: 1rem 0 0;
+    border-left: 3px solid var(--blue);
+    padding: 0.2rem 0 0.2rem 0.95rem;
+    color: #e5ecff;
+    line-height: 1.7;
+}
+
+.xpdite-license-text {
+    margin: 1rem 0 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: #e3e8f8;
+    line-height: 1.72;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.xpdite-legal-card + .xpdite-legal-card,
+.xpdite-card + .xpdite-card {
+    margin-top: 0.1rem;
+}
+
+.xpdite-footer {
+    border-top: 1px solid #1a1a1a;
+    margin-top: 0.5rem;
+}
+
+.xpdite-footer-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 1.15rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.xpdite-footer-copy {
+    color: var(--xpdite-text-dim);
+    font-size: 0.9rem;
+}
+
+.xpdite-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+}
+.xpdite-footer-divider{
+    color: var(--blue);
+}
+.xpdite-github-logo{
+    width: 20px;
+    height: 20px;
+}
+.xpdite-github-logo svg{
+    fill: var(--blue);
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 860px) {
+    .xpdite-hero {
+        grid-template-columns: 290px minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .xpdite-topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .xpdite-nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .xpdite-shell {
+        padding-top: 2.4rem;
+    }
+
+    .xpdite-card,
+    .xpdite-legal-card {
+        padding: 1.2rem;
+    }
+}
