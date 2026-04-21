@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Redirecting...</title>
+    <script>
+        (function () {
+            const path = window.location.pathname || "/";
+            const segments = path.split("/").filter(Boolean);
+
+            if (!segments.length) {
+                return;
+            }
+
+            if (segments[0].toLowerCase() !== "xpdite") {
+                return;
+            }
+
+            const section = (segments[1] || "").toLowerCase();
+            let destination = "/Xpdite";
+
+            if (section === "privacy") {
+                destination = "/Xpdite/privacy";
+            } else if (section === "tos") {
+                destination = "/Xpdite/tos";
+            }
+
+            const suffix = (window.location.search || "") + (window.location.hash || "");
+            window.location.replace(destination + suffix);
+        })();
+    </script>
+</head>
+<body style="font-family: Montserrat, sans-serif; background: #000; color: #fff; margin: 0; display: grid; place-items: center; min-height: 100vh;">
+    <main style="padding: 24px; text-align: center; max-width: 560px;">
+        <h1 style="margin: 0 0 12px; color: #0255FF;">Page not found</h1>
+        <p style="margin: 0 0 18px; line-height: 1.6; color: #d8def0;">If you were trying to open an Xpdite page, the URL is case-sensitive on this host. Use one of the links below.</p>
+        <p style="margin: 0; line-height: 1.8;">
+            <a href="/Xpdite" style="color: #0255FF; text-decoration: none;">/Xpdite</a><br>
+            <a href="/Xpdite/privacy" style="color: #0255FF; text-decoration: none;">/Xpdite/privacy</a><br>
+            <a href="/Xpdite/tos" style="color: #0255FF; text-decoration: none;">/Xpdite/tos</a>
+        </p>
+    </main>
+</body>
+</html>
