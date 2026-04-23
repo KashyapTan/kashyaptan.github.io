@@ -61,6 +61,45 @@
                 </ul>
             </section>
 
+            <section class="xpdite-card" aria-labelledby="install-title">
+                <h2 class="xpdite-section-title" id="install-title">Install Xpdite</h2>
+                <p class="xpdite-body-text">
+                    Install with one command based on your platform.
+                </p>
+                <div class="xpdite-install-grid">
+                    <article class="xpdite-install-item" aria-label="Install on macOS">
+                        <h3 class="xpdite-install-label">macOS</h3>
+                        <button
+                            class="xpdite-copy-btn"
+                            type="button"
+                            aria-label="Copy macOS install command"
+                            data-copy-command="curl -fsSL https://kashyaptan.com/Xpdite/install.sh | bash"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                            </svg>
+                        </button>
+                        <pre class="xpdite-code-block"><code>curl -fsSL https://kashyaptan.com/Xpdite/install.sh | bash</code></pre>
+                    </article>
+                    <article class="xpdite-install-item" aria-label="Install on Windows PowerShell">
+                        <h3 class="xpdite-install-label">Windows (PowerShell)</h3>
+                        <button
+                            class="xpdite-copy-btn"
+                            type="button"
+                            aria-label="Copy Windows install command"
+                            data-copy-command="irm https://kashyaptan.com/Xpdite/install.ps1 | iex"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                            </svg>
+                        </button>
+                        <pre class="xpdite-code-block"><code>irm https://kashyaptan.com/Xpdite/install.ps1 | iex</code></pre>
+                    </article>
+                </div>
+            </section>
+
             <section class="xpdite-card" aria-labelledby="privacy-overview-title">
                 <h2 class="xpdite-section-title" id="privacy-overview-title">Local-First by Design</h2>
                 <p class="xpdite-body-text">
@@ -87,5 +126,71 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        (function () {
+            var copyButtons = document.querySelectorAll('.xpdite-copy-btn');
+
+            function copyText(value) {
+                if (navigator.clipboard && window.isSecureContext) {
+                    return navigator.clipboard.writeText(value);
+                }
+
+                return new Promise(function (resolve, reject) {
+                    var helper = document.createElement('textarea');
+                    helper.value = value;
+                    helper.setAttribute('readonly', '');
+                    helper.style.position = 'fixed';
+                    helper.style.top = '-9999px';
+                    helper.style.left = '-9999px';
+                    document.body.appendChild(helper);
+                    helper.focus();
+                    helper.select();
+
+                    try {
+                        var didCopy = document.execCommand('copy');
+                        document.body.removeChild(helper);
+                        if (!didCopy) {
+                            reject(new Error('Copy command did not succeed'));
+                            return;
+                        }
+                        resolve();
+                    } catch (error) {
+                        document.body.removeChild(helper);
+                        reject(error);
+                    }
+                });
+            }
+
+            copyButtons.forEach(function (button) {
+                var defaultLabel = button.getAttribute('aria-label') || 'Copy command';
+
+                button.addEventListener('click', function () {
+                    var command = button.getAttribute('data-copy-command');
+                    if (!command) {
+                        return;
+                    }
+
+                    copyText(command)
+                        .then(function () {
+                            button.classList.add('is-copied');
+                            button.setAttribute('aria-label', 'Copied');
+
+                            window.setTimeout(function () {
+                                button.classList.remove('is-copied');
+                                button.setAttribute('aria-label', defaultLabel);
+                            }, 1500);
+                        })
+                        .catch(function () {
+                            button.classList.add('is-copy-failed');
+
+                            window.setTimeout(function () {
+                                button.classList.remove('is-copy-failed');
+                            }, 1500);
+                        });
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
