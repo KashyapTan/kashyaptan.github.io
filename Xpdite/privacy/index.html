@@ -45,7 +45,7 @@
                 <h2 class="xpdite-section-title" id="collection-title">Data Collection and Use</h2>
                 <p class="xpdite-body-text">
                     Xpdite accesses Google User Data, including Gmail messages and Google Calendar events,
-                    only to provide requested features such as email summarization and calendar scheduling.
+                    only to provide requested features such as email summarization, email management, and calendar scheduling.
                 </p>
                 <p class="xpdite-body-text">
                     Xpdite runs 100% locally on the user's own device, so Gmail and Calendar content is not
@@ -57,10 +57,91 @@
                 </p>
             </article>
 
+            <article class="xpdite-legal-card" aria-labelledby="sharing-title">
+                <h2 class="xpdite-section-title" id="sharing-title">Data Sharing, Transfer, and Disclosure</h2>
+                <p class="xpdite-body-text">
+                    Xpdite does not share, sell, transfer, or disclose Google user data to any third parties,
+                    except in the following limited circumstances:
+                </p>
+                <ul class="xpdite-list">
+                    <li>
+                        <strong>User-initiated support:</strong> If a user explicitly requests troubleshooting assistance
+                        or reports a security issue, they may voluntarily share relevant data with the developer.
+                        This sharing only occurs with the user's explicit prior consent.
+                    </li>
+                    <li>
+                        <strong>Legal requirements:</strong> Xpdite may disclose information if required to do so
+                        by law or in response to a valid legal process, such as a court order or government request.
+                    </li>
+                </ul>
+                <p class="xpdite-body-text">
+                    Google user data is never used for advertising, profiling, or any purpose beyond the features
+                    explicitly requested by the user within the application.
+                </p>
+            </article>
+
+            <article class="xpdite-legal-card" aria-labelledby="protection-title">
+                <h2 class="xpdite-section-title" id="protection-title">Data Protection Mechanisms</h2>
+                <p class="xpdite-body-text">
+                    Xpdite applies the following protections for all Google user data:
+                </p>
+                <ul class="xpdite-list">
+                    <li>
+                        <strong>Local-only processing:</strong> All Gmail and Calendar data is processed exclusively
+                        on the user's local machine. No email or calendar content is transmitted to Xpdite's servers
+                        or any third-party server under normal operation.
+                    </li>
+                    <li>
+                        <strong>OAuth 2.0 authentication:</strong> Xpdite uses Google's OAuth 2.0 protocol to
+                        authenticate users. Access and refresh tokens are stored locally on the user's device
+                        using the operating system's standard secure credential storage.
+                    </li>
+                    <li>
+                        <strong>Encrypted transit:</strong> All communication between the application and Google APIs
+                        occurs exclusively over HTTPS/TLS-encrypted connections.
+                    </li>
+                    <li>
+                        <strong>Minimum necessary access:</strong> Xpdite requests only the Google API scopes
+                        required to provide its declared features, in accordance with Google's Limited Use policy.
+                    </li>
+                    <li>
+                        <strong>No persistent logging:</strong> Xpdite does not log, cache, or write email content
+                        or calendar event details to disk beyond what is strictly required for a single user session.
+                    </li>
+                </ul>
+            </article>
+
+            <article class="xpdite-legal-card" aria-labelledby="retention-title">
+                <h2 class="xpdite-section-title" id="retention-title">Data Retention and Deletion</h2>
+                <p class="xpdite-body-text">
+                    Because Xpdite operates as a local-first desktop application, it does not retain Google user data
+                    on any central server. The following retention principles apply:
+                </p>
+                <ul class="xpdite-list">
+                    <li>
+                        <strong>Email and Calendar content:</strong> Gmail messages and Calendar events are fetched
+                        on demand and held only in memory for the duration of the operation. They are not written
+                        to disk and are discarded when the session ends.
+                    </li>
+                    <li>
+                        <strong>OAuth tokens:</strong> Access and refresh tokens are stored locally on the user's
+                        device to maintain authentication between sessions. Users can revoke Xpdite's access at
+                        any time by visiting
+                        <a class="xpdite-link" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a>
+                        and removing Xpdite. Upon revocation, all locally stored tokens become invalid immediately.
+                    </li>
+                    <li>
+                        <strong>User-initiated deletion:</strong> Users can delete all locally stored application
+                        data, including OAuth tokens and any cached preferences, by uninstalling the application
+                        or clearing its data directory. Detailed instructions are provided in the application documentation.
+                    </li>
+                </ul>
+            </article>
+
             <article class="xpdite-legal-card" aria-labelledby="limited-use-title">
                 <h2 class="xpdite-section-title" id="limited-use-title">Google API Limited Use Disclosure</h2>
                 <p class="xpdite-policy-callout">
-                    Xpdite’s use and transfer of information received from Google APIs to any other app will adhere to
+                    Xpdite's use and transfer of information received from Google APIs to any other app will adhere to
                     <a class="xpdite-link" href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>,
                     including the Limited Use requirements.
                 </p>
