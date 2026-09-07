@@ -52,59 +52,54 @@ function buildCenterpiece(id, material) {
     geometry.translate(0, 0, -depth / 2);
     return new THREE.Mesh(geometry, material(color));
   }
-  const palette = [0x386af3, 0x6b49df, 0x7b9fff];
-  if (id === "home") {
-    // Each rotating part fits inside the next frame in every orientation.
-    [1.7, 0.75, 0.29].forEach((size, i) => {
-      const part = frame(
-        new THREE.BoxGeometry(size, size, size),
-        0.11 - i * 0.018,
-        palette[i],
-      );
-      parts.push(part);
-      centerpiece.add(part);
-    });
-  } else if (id === "work") {
-    // The middle circumsphere fits inside the outer diamond's inscribed opening.
-    [1.45, 0.75, 0.34].forEach((radius, i) => {
-      const part = polygonLoop(
-        4,
-        radius,
-        [0.16, 0.1, 0.06][i],
-        0.08,
-        palette[i],
-      );
-      parts.push(part);
-      centerpiece.add(part);
-    });
-  } else if (id === "projects") {
-    // Triangle openings reserve clearance for unrestricted inner rotations.
-    [1.5, 0.58, 0.18].forEach((radius, i) => {
-      const part = polygonLoop(
-        3,
-        radius,
-        [0.14, 0.09, 0.04][i],
-        0.06,
-        palette[i],
-      );
-      parts.push(part);
-      centerpiece.add(part);
-    });
-  } else {
-    // An octahedral cage, a counter-rotating cube, and a faceted crystal core.
-    const outer = frame(new THREE.OctahedronGeometry(1.15), 0.075, palette[0]);
-    const inner = frame(
-      new THREE.BoxGeometry(0.64, 0.64, 0.64),
-      0.06,
-      palette[1],
-    );
-    const crystal = new THREE.Mesh(
-      new THREE.OctahedronGeometry(0.2),
-      material(palette[2]),
-    );
-    parts.push(outer, inner, crystal);
-    centerpiece.add(...parts);
+  const palette = [0x386af3, 0x6b49df, 0x7b9fff, 0xacc5ff];
+  function add(part) {
+    parts.push(part);
+    centerpiece.add(part);
   }
+  function cage(geometry, thickness, color) {
+    // Vertex crystals belong to the same rigid cage, so their joints stay connected.
+    const positions = geometry.attributes.position;
+    const corners = new Map();
+    for (let i = 0; i < positions.count; i++) {
+      const point = new THREE.Vector3().fromBufferAttribute(positions, i);
+      corners.set(point.toArray().map(n => n.toFixed(4)).join(','), point);
+    }
+    const shape = frame(geometry, thickness, color);
+    const jointGeometry = new THREE.OctahedronGeometry(thickness * 0.95);
+    const jointMaterial = material(0x7695ff);
+    for (const point of corners.values()) {
+      const joint = new THREE.Mesh(jointGeometry, jointMaterial);
+      joint.position.copy(point);
+      shape.add(joint);
+    }
+    return shape;
+  }
+  // Each layer occupies its own radial shell. Even independent full rotations
+  // cannot intersect the adjacent layer. The silhouettes vary across chapters.
+  if (id === "home") {
+    add(cage(new THREE.BoxGeometry(1.7, 1.7, 1.7), 0.07, palette[0]));
+    add(polygonLoop(6, 1.00, 0.075, 0.075, palette[1]));
+    add(cage(new THREE.IcosahedronGeometry(0.57), 0.033, palette[2]));
+    add(polygonLoop(3, 0.32, 0.035, 0.035, palette[1]));
+  } else if (id === "work") {
+    add(cage(new THREE.DodecahedronGeometry(1.48), 0.052, palette[0]));
+    add(polygonLoop(4, 1.04, 0.085, 0.075, palette[1]));
+    add(cage(new THREE.OctahedronGeometry(0.55), 0.04, palette[2]));
+    add(polygonLoop(6, 0.27, 0.035, 0.035, palette[1]));
+  } else if (id === "projects") {
+    add(cage(new THREE.IcosahedronGeometry(1.45), 0.048, palette[0]));
+    add(polygonLoop(3, 1.08, 0.07, 0.07, palette[1]));
+    add(cage(new THREE.BoxGeometry(0.44, 0.44, 0.44), 0.035, palette[2]));
+    add(polygonLoop(4, 0.23, 0.03, 0.03, palette[1]));
+  } else {
+    add(cage(new THREE.OctahedronGeometry(1.40), 0.06, palette[0]));
+    add(polygonLoop(5, 0.84, 0.07, 0.065, palette[1]));
+    add(cage(new THREE.TetrahedronGeometry(0.46), 0.03, palette[2]));
+    add(polygonLoop(6, 0.19, 0.025, 0.025, palette[1]));
+  }
+  // A tiny luminous crystal is the common visual anchor of all four mechanisms.
+  add(new THREE.Mesh(new THREE.OctahedronGeometry(0.085), material(palette[3])));
   centerpiece.userData.parts = parts;
   return centerpiece;
 }
@@ -172,9 +167,10 @@ export function createOrbitalScene(isPaused) {
     group.add(centerpiece);
     host.classList.add("orbit-dial");
     const rings = new THREE.Group();
-    // An instrument-like perimeter replaces the tangle of crossing orbits and spokes.
+    // The dial sits inside the selector orbit, leaving a visible air gap
+    // even at the markers' maximum size and rotation.
     const circumference = new THREE.Mesh(
-      new THREE.TorusGeometry(2.55, 0.006, 4, 160),
+      new THREE.TorusGeometry(1.94, 0.006, 4, 160),
       new THREE.MeshBasicMaterial({
         color: 0x6481b2,
         transparent: true,
@@ -186,13 +182,13 @@ export function createOrbitalScene(isPaused) {
     const ticks = [];
     for (let i = 0; i < 60; i++) {
       const angle = (i / 60) * Math.PI * 2;
-      const inner = i % 5 === 0 ? 2.66 : 2.69;
+      const inner = i % 5 === 0 ? 2.02 : 2.05;
       ticks.push(
         Math.cos(angle) * inner,
         Math.sin(angle) * inner,
         -0.45,
-        Math.cos(angle) * 2.72,
-        Math.sin(angle) * 2.72,
+        Math.cos(angle) * 2.08,
+        Math.sin(angle) * 2.08,
         -0.45,
       );
     }
@@ -213,7 +209,7 @@ export function createOrbitalScene(isPaused) {
     );
     group.add(rings);
     const focusArc = new THREE.Mesh(
-      new THREE.TorusGeometry(2.55, 0.018, 5, 32, 0.32),
+      new THREE.TorusGeometry(1.94, 0.018, 5, 32, 0.32),
       new THREE.MeshBasicMaterial({
         color: 0x729bff,
         transparent: true,

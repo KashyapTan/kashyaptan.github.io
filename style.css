@@ -211,14 +211,11 @@ nav a:hover {
 h1 {
   font-size: clamp(70px, 8.3vw, 150px);
   letter-spacing: -0.075em;
-  line-height: 0.93;
+  line-height: 1.08;
   margin-left: -6px;
 }
 h1 > span {
   color: #4c83ff;
-}
-.name-period {
-  color: #eee;
 }
 .hero-statement {
   font-size: clamp(23px, 2.2vw, 36px);
