@@ -1,390 +1,665 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kashyap Tanuku | Full Stack Dev</title>
-    <link rel="icon" type="images/x-icon" href="icons/kashPfpFit.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-    <body>
-            <header class="main-header-element">
-                <div class="header-bg"></div>
-                <a id="home-page"></a>
-                <div class="header-container">
-    
-                    <div class="logo-space"> 
-                         
-                        <a id="home-page-link">
-                            <img class="kash-logo nav-link" src="icons/kashLogo.png" alt="" draggable="false">
-                        </a>
-                    </div>
-    
-                    <div class="navbar-space">
-                        <img class="menu-logo" src="icons/menuLogo.png" alt="" draggable="false">
-                    </div>
-    
-                    <nav class="header-navbar">
-                        <ul class="nav-elements">
-                            <li>
-                                <a id="home-page-link-2" class="nav-link">Home</a>
-                            </li>
-                            
-                            <!-- <li>
-                                <a  id="about-page-link" class="nav-link">About</a>
-                            </li> -->
-    
-                            <li>
-                                <a id="contact-page-link" class="nav-link">Social</a>
-                            </li>
-    
-                            <li class="social-logos">
-                                <a href="https://www.linkedin.com/in/kashyaptanuku/" target="_blank">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                        id="linkedin-logo" d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13 10.283 13 13.396V19H10V8H13V9.765C14.396 7.179 20 6.988 20 12.241V19Z"
-                                            fill="#0255FF" />
-                                    </svg>
-                                </a>
-                            </li>
-    
-                            <li class="social-logos"> 
-                                <a href="https://github.com/KashyapTan" target="_blank">
-                                    <svg   width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                        id="github-logo" d="M12 0C5.374 0 0 5.373 0 12C0 17.302 3.438 21.8 8.207 23.387C8.806 23.498 9 23.126 9 22.81V20.576C5.662 21.302 4.967 19.16 4.967 19.16C4.421 17.773 3.634 17.404 3.634 17.404C2.545 16.659 3.717 16.675 3.717 16.675C4.922 16.759 5.556 17.912 5.556 17.912C6.626 19.746 8.363 19.216 9.048 18.909C9.155 18.134 9.466 17.604 9.81 17.305C7.145 17 4.343 15.971 4.343 11.374C4.343 10.063 4.812 8.993 5.579 8.153C5.455 7.85 5.044 6.629 5.696 4.977C5.696 4.977 6.704 4.655 8.997 6.207C9.954 5.941 10.98 5.808 12 5.803C13.02 5.808 14.047 5.941 15.006 6.207C17.297 4.655 18.303 4.977 18.303 4.977C18.956 6.63 18.545 7.851 18.421 8.153C19.191 8.993 19.656 10.064 19.656 11.374C19.656 15.983 16.849 16.998 14.177 17.295C14.607 17.667 15 18.397 15 19.517V22.81C15 23.129 15.192 23.504 15.801 23.386C20.566 21.797 24 17.3 24 12C24 5.373 18.627 0 12 0Z"
-                                            fill="#0255FF" />
-                                    </svg>
-                                </a>
-                            </li>
-                        
-                            <li class="social-logos"> 
-                                <a  href="icons/resume.pdf" target="_blank">
-                                    <svg width="24" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M1 24H20V1H19V23H1V24ZM18 0H0V22H18V0ZM15 17H3V18H15V17ZM15 14H3V15H15V14ZM15 11H3V12H15V11ZM7.652 7.137L8.6 7.437C8.455 7.966 8.213 8.359 7.875 8.615C7.537 8.872 7.108 9 6.588 9C5.945 9 5.417 8.78 5.003 8.341C4.589 7.902 4.382 7.301 4.382 6.539C4.382 5.733 4.59 5.107 5.006 4.661C5.422 4.215 5.969 3.992 6.648 3.992C7.24 3.992 7.721 4.167 8.091 4.517C8.312 4.724 8.477 5.022 8.587 5.409L7.619 5.64C7.562 5.389 7.442 5.191 7.261 5.046C7.079 4.9 6.858 4.828 6.598 4.828C6.239 4.828 5.948 4.957 5.724 5.214C5.501 5.472 5.389 5.889 5.389 6.466C5.389 7.079 5.499 7.515 5.72 7.774C5.94 8.034 6.226 8.164 6.578 8.164C6.838 8.164 7.062 8.082 7.249 7.916C7.436 7.751 7.571 7.491 7.652 7.137ZM10.675 8.917L8.944 4.075H10.004L11.23 7.659L12.416 4.075H13.453L11.719 8.917H10.675Z"
-                                            fill="#0255FF" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-    
-                </div>
-            </header>
-            <div class="card-container">
-                <div class="homepage">
-                    <div class="intro-text">
-                        <div class="intro-text-container">
-                            <span class="text-animation-112">Kashyap Tanuku</span>
-                            <span class="text-animation-112 full-stack-text">Full Stack Developer</span>
-                        </div>
-                    </div>                
-                </div>
-    
-                <div class="page-1">
-                    <!-- <img class="home-page-bg-image" src="icons/home-page-bg.png" alt=""> -->
-    
-                    <div class="about-me-text-container">
-                        <p class="aboutme-text text-animation-112">
-                             I am pursuing a <a class="blue-text">Computer Science</a> and <a class="blue-text">Mathematics</a> degree at Rutgers University. I am extremely curious, love learning new things, and enjoy having the creative freedom to develop unique solutions. I am deeply interested in <a class="blue-text">machine learning</a>, <a class="blue-text">optimization</a>, <a class="blue-text">low latency systems</a>, and <a class="blue-text">advanced data analysis</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        <div class="page-2">
-            <div class="container">
-                <div class="scroll-container">
-                    <!-- scroll bar location -->
-                    <svg class="scroll-progress" viewBox="0 0 900 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z"
-                            fill="#D9D9D9" />
-                        <mask id="mask0_0_1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="10">
-                            <path
-                                d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z"
-                                fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_0_1)">
-                            <rect class="mask" y="-49" height="99" fill="#0255FF" />
-                        </g>
-                    </svg>
-                </div>
-
-                <section class="projects-text">
-                    <span  id="word1" >My</span> 
-                    <span  id="word2" >Work & Exprience</span>
-                </section>
-
-                <div id="portfolio-cards-row" style="display: contents;"></div>
-            </div>   
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0e1212" />
+    <meta
+      name="description"
+      content="Kashyap Tanuku | software engineer at Intuit, building on the payments gateway team. Exploring the intersection of systems, AI, and thoughtful interfaces."
+    />
+    <title>Kashyap Tanuku | Software Engineer</title>
+    <link rel="icon" type="image/png" href="icons/kashPfpFit.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;450;500;550;600;650;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="vendor/lenis.css" />
+    <link rel="stylesheet" href="style.css?v=20260906.14" />
+    <link rel="stylesheet" href="spatial.css?v=20260906.15" />
+    <script src="script.js?v=20260906.14" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Kashyap Tanuku, home"
+        >kt<span>.</span></a
+      >
+      <nav class="journey-dock" aria-label="Portfolio chapters">
+        <a href="#home" aria-label="Introduction" data-chapter="home"
+          ><span aria-hidden="true">⌂</span
+          ><span class="dock-label">Start</span></a
+        >
+        <a href="#work" data-chapter="work"
+          ><span class="dock-label">Experience</span></a
+        >
+        <a href="#projects" data-chapter="projects"
+          ><span class="dock-label">Projects</span></a
+        >
+        <a href="#about" data-chapter="about"
+          ><span class="dock-label">About</span></a
+        >
+        <a href="#contact" data-chapter="contact"
+          ><span class="dock-label">Contact</span></a
+        >
+        <button
+          id="motion-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Pause motion"
+        >
+          Ⅱ
+        </button>
+      </nav>
+    </header>
+    <main id="main">
+      <section
+        class="hero section-shell"
+        id="home"
+        aria-labelledby="hero-title"
+      >
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span> SOFTWARE ENGINEER · CURIOUS BY
+            DEFAULT
+          </div>
+          <h1 id="hero-title">
+            Kashyap<br /><span>Tanuku</span>
+          </h1>
+          <p class="hero-statement">
+            Complex systems.<br />Considered experiences.
+          </p>
+          <p class="hero-description">
+            I build where engineering meets possibility.<br />Currently in
+            fintech at <strong>Intuit</strong>, on the<br
+              class="desktop-break"
+            />
+            payments gateway team.
+          </p>
+          <a class="button button-primary" href="#work"
+            >Explore my work
+            <span aria-hidden="true"
+              ><svg
+                class="link-arrow arrow-down"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path d="M6 18L18 6M6 6h12v12" /></svg></span
+          ></a>
         </div>
-        <div class="skills-page">
-            <div class="skills-page-container">
-                <div class="scroll-container">
-                    <!-- scroll bar location -->
-                    <svg class="scroll-progress" viewBox="0 0 900 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z"
-                            fill="#D9D9D9" />
-                        <mask id="mask0_0_1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="10">
-                            <path
-                                d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z"
-                                fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_0_1)">
-                            <rect class="mask2" y="-49" height="99" fill="#0255FF" />
-                        </g>
-                    </svg>
-                </div>
-                
-                <section class="card-holder-section-holder">
-                    <img src="icons/black-bg.png" alt="">
-                </section>
-
-                <div id="skills-cards-row" style="display: contents;"></div>
-                <section class="projects-text-2">
-                    <span id="word1">My</span>
-                    <span id="word2">Skills</span>
-                </section>
-            </div>
+        <div
+          class="hero-art scene-slot"
+          id="hero-art"
+          data-scene="home"
+          aria-label="Explore the portfolio in 3D"
+        >
+          <div class="scene-caption">
+            <span>YOUR NEXT DESTINATION</span><span>01 / 03</span>
+          </div>
+          <div class="art-aura" aria-hidden="true"></div>
+          <div class="scene-links">
+            <a href="#work" data-node="0">
+              Experience <b aria-hidden="true">↗</b></a
+            >
+            <a href="#projects" data-node="1">
+              Projects <b aria-hidden="true">↗</b></a
+            >
+            <a href="#about" data-node="2">
+              About me <b aria-hidden="true">↗</b></a
+            >
+          </div>
+          <p class="scene-instruction">
+            Choose a destination. Follow your curiosity.
+          </p>
         </div>
-
-        <!-- <div class="page-3">
-            <div class="skills-page-text-container">
-                <div class="skills-page-text-box">
-                    <div>My </div> 
-                    <div class="blue-text">Full </div> 
-                    <div class="blue-text">Stack </div> 
-                    <div>Skills</div>
-
-                </div>
-                <div class="skills-page-text-box explore-text">
-                    Scroll down to explore!
-                </div>
-            </div>
-            <div class="skills-container">
-                <div class="front-end-skills">
-                    <div class="front-end-skills-text">
-                        <div class="skills-header">
-                            <h1 class="blue-text">Front End Skills</h1>
-                            <div class="line-1"></div>
-                        </div>
-                        <div class="text-container">
-                            <ul class="list-of-front-end-skills-1">
-                                <li>
-                                    React
-                                </li>
-                                <li>
-                                    JavaScript
-                                </li>
-                                <li>
-                                    HTML/CSS
-                                </li>
-                                <li>
-                                    Dart
-                                </li>
-                            </ul>
-                            <ul class="list-of-front-end-skills-2">
-                                <li>
-                                    Tailwind CSS
-                                </li>
-                                <li>
-                                    Bootstrap
-                                </li>
-                                <li>
-                                    Figma
-                                </li>
-                                <li>
-                                    GreenSock (GSAP)
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="back-end-skills">
-                    <div class="back-end-skills-text">
-                        <h1 class="blue-text">Back End Skills</h1>
-                            <div class="text-container">
-                                <ul class="list-of-back-end-skills-1">
-                                    <li>
-                                        Python
-                                    </li>
-                                    <li>
-                                        Java
-                                    </li>
-                                    <li>
-                                        C/C++
-                                    </li>
-                                </ul>
-                                <ul class="list-of-back-end-skills-2">
-                                    <li>
-                                        Assembly
-                                    </li>
-                                    <li>
-                                        Node.js
-                                    </li>
-                                    <li>
-                                        Data Structures<br>& Algorithms
-                                    </li>
-                                </ul>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="data-management-api-skills">
-                    <div class="data-management-api-skills-text">
-                        <h1 class="blue-text">Data Management/API</h1>
-                        <div class="text-container">
-                            <ul class="list-of-data-api-1">
-                                <li>
-                                    MongoDB
-                                </li>
-                                <li>
-                                    AWS
-                                </li>
-                                <li>
-                                    Azure
-                                </li>
-                                <li>
-                                    Google Firebase
-                                </li>
-                            </ul>
-                            <ul class="list-of-data-api-2">
-                                <li>
-                                    Express.js
-                                </li>
-                                <li>
-                                    RapidAPI
-                                </li>
-                                <li>
-                                    SQL
-                                </li>
-                                <li>
-                                    R (Language)
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="functional-skills">
-                   <div class="dev-tools-text">
-                        <h1 class="blue-text">Developer Tools</h1>
-                        <div class="text-container">
-                            <ul class="list-of-tools-1">
-                                <li>
-                                    Linux/Unix
-                                </li>
-                                <li>
-                                    Flutter
-                                </li>
-                                <li>
-                                    Git/GitHub
-                                </li>
-                                <li>
-                                    Postman
-                                </li>
-                            </ul>
-                            <ul class="list-of-tools-2">
-                                <li>
-                                    Jira
-                                </li>
-                                <li>
-                                    Docker
-                                </li>
-                                <li>
-                                    Selenium
-                                </li>
-                                <li>
-                                    NPM
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="page-4">
-            <a id="contacts-page"></a>
-
-            <form id="contact-form">
-                <h1 class="contact-me-text">Contact Me</h1>
-                <input type="text" id="name" placeholder="Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <textarea id="message" rows="4" placeholder="Message" required></textarea>
-                <button class="form-submit" type="submit">Send Message</button>
-            </form>
-
-            <div class="social-icon-track-container">
-                <ul class="social-icon-track">
-
-                    <li class="social-icons"> 
-                        <a href="icons/resume.pdf" target="_blank">
-                            <svg width="120" height="120" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M1 24H20V1H19V23H1V24ZM18 0H0V22H18V0ZM15 17H3V18H15V17ZM15 14H3V15H15V14ZM15 11H3V12H15V11ZM7.652 7.137L8.6 7.437C8.455 7.966 8.213 8.359 7.875 8.615C7.537 8.872 7.108 9 6.588 9C5.945 9 5.417 8.78 5.003 8.341C4.589 7.902 4.382 7.301 4.382 6.539C4.382 5.733 4.59 5.107 5.006 4.661C5.422 4.215 5.969 3.992 6.648 3.992C7.24 3.992 7.721 4.167 8.091 4.517C8.312 4.724 8.477 5.022 8.587 5.409L7.619 5.64C7.562 5.389 7.442 5.191 7.261 5.046C7.079 4.9 6.858 4.828 6.598 4.828C6.239 4.828 5.948 4.957 5.724 5.214C5.501 5.472 5.389 5.889 5.389 6.466C5.389 7.079 5.499 7.515 5.72 7.774C5.94 8.034 6.226 8.164 6.578 8.164C6.838 8.164 7.062 8.082 7.249 7.916C7.436 7.751 7.571 7.491 7.652 7.137ZM10.675 8.917L8.944 4.075H10.004L11.23 7.659L12.416 4.075H13.453L11.719 8.917H10.675Z"
-                                    fill="#0255FF" />
-                            </svg>
-                        </a>
-                    </li>
-
-                    <li class="social-icons">
-                        <a href="https://www.linkedin.com/in/kashyaptanuku/" target="_blank">
-                            <svg  width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                id="linkedin-logo" d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13 10.283 13 13.396V19H10V8H13V9.765C14.396 7.179 20 6.988 20 12.241V19Z"
-                                    fill="#0255FF" />
-                            </svg>
-                        </a>
-                    </li>
-
-                    <li class="social-icons"> 
-                        <a href="https://github.com/KashyapTan" target="_blank">
-                            <svg   width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                id="github-logo" d="M12 0C5.374 0 0 5.373 0 12C0 17.302 3.438 21.8 8.207 23.387C8.806 23.498 9 23.126 9 22.81V20.576C5.662 21.302 4.967 19.16 4.967 19.16C4.421 17.773 3.634 17.404 3.634 17.404C2.545 16.659 3.717 16.675 3.717 16.675C4.922 16.759 5.556 17.912 5.556 17.912C6.626 19.746 8.363 19.216 9.048 18.909C9.155 18.134 9.466 17.604 9.81 17.305C7.145 17 4.343 15.971 4.343 11.374C4.343 10.063 4.812 8.993 5.579 8.153C5.455 7.85 5.044 6.629 5.696 4.977C5.696 4.977 6.704 4.655 8.997 6.207C9.954 5.941 10.98 5.808 12 5.803C13.02 5.808 14.047 5.941 15.006 6.207C17.297 4.655 18.303 4.977 18.303 4.977C18.956 6.63 18.545 7.851 18.421 8.153C19.191 8.993 19.656 10.064 19.656 11.374C19.656 15.983 16.849 16.998 14.177 17.295C14.607 17.667 15 18.397 15 19.517V22.81C15 23.129 15.192 23.504 15.801 23.386C20.566 21.797 24 17.3 24 12C24 5.373 18.627 0 12 0Z"
-                                    fill="#0255FF" />
-                            </svg>
-                        </a>
-                    </li>
-
-                    <li class="social-icons"> 
-                        
-                        <a class="email-image">
-                            <svg width="120" height="120" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M22.288 17H1.712C0.767 17 0 16.233 0 15.288V1.712C0 0.767 0.767 0 1.712 0H22.288C23.233 0 24 0.767 24 1.712V15.288C24 16.233 23.233 17 22.288 17ZM12 10.914L2.658 4.431L2.638 16H21.322V4.431L12 10.914ZM20.869 1H3.08L12 7.229C12 7.229 18.252 2.823 20.869 1Z"
-                                    fill="#0255FF" />
-                            </svg>
-
-                            <dialog class="dialog-text" tabindex=0 >
-                                Copied Email!
-                            </dialog>
-                        </a>
-                    </li>
-
-                </ul>
-                <div class="social-images">
-                    <span class="socials-bg-text">SOCIALS</span>
-                </div>
-            </div>
-
+        <div class="hero-footer">
+          <a href="#work"
+            ><span class="scroll-arrow" aria-hidden="true">↓</span> A LITTLE
+            FURTHER, A LOT MORE</a
+          ><span>PAYMENTS / AI / FULL STACK</span
+          ><span class="portfolio-index">PORTFOLIO | 2026</span>
         </div>
-        
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-        <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>  
-        <script src="https://unpkg.com/split-type"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script type="text/javascript">(function () {emailjs.init("424qbLl1CEmdoa7bU")})()</script>
-        <script src="script.js" type="module"></script>
-    </body>
+      </section>
+      <section
+        class="work section-shell section-space"
+        id="work"
+        aria-labelledby="work-title"
+      >
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow section-label">01 / EXPERIENCE</p>
+            <h2 id="work-title">
+              Built with purpose.<br /><span class="muted"
+                >Across disciplines.</span
+              >
+            </h2>
+          </div>
+          <p>
+            From intelligent tools to the systems<br />that help money move.
+          </p>
+        </div>
+        <article class="featured-work tilt-card reveal">
+          <div class="featured-copy">
+            <p class="eyebrow">
+              <span class="status-dot"></span> NOW BUILDING AT
+            </p>
+            <h3>intuit<span class="intuit-dot">.</span></h3>
+            <h4>Software Engineer</h4>
+            <p>
+              Helping Intuit merchants get paid by building on and maintaining
+              the payments gateway.
+            </p>
+            <div class="tags">
+              <span>Java</span><span>Spring Boot</span><span>Python</span>
+              <span>TypeScript</span><span>React</span><span>Kubernetes</span>
+              <span>AWS</span><span>Docker</span><span>Argo CD</span>
+              <span>Talend</span><span>PostgreSQL</span><span>Splunk</span>
+              <span>Sentry</span><span>PagerDuty</span>
+            </div>
+          </div>
+          <div
+            class="payment-visual"
+            aria-label="Conceptual payment flow: customer, gateway, and merchant"
+          >
+            <div class="flow-caption eyebrow">THE CONNECTION THAT COUNTS</div>
+            <div class="payment-flow">
+              <span class="flow-node">CUSTOMER</span
+              ><span class="flow-track" aria-hidden="true"><i></i></span>
+              <div class="gateway-node">
+                <span aria-hidden="true">↔</span><small>GATEWAY</small>
+              </div>
+              <span class="flow-track" aria-hidden="true"><i></i></span
+              ><span class="flow-node">MERCHANT</span>
+            </div>
+            <div class="flow-footnote">
+              <span class="status-dot"></span> MANY MOVING PARTS. ONE CONNECTED
+              EXPERIENCE.
+            </div>
+          </div>
+        </article>
+        <div class="experience-list">
+          <details class="experience-row reveal">
+            <summary>
+              <span class="row-index">01</span>
+              <div>
+                <h3>Coforge</h3>
+                <span>AI / ML Engineer Intern</span>
+              </div>
+              <p>Helping systems understand<br />why things break.</p>
+              <span class="expand" aria-hidden="true">+</span>
+            </summary>
+            <div class="experience-detail">
+              <p>
+                Built and deployed a root cause analysis engine for large-scale
+                microservices, cutting SRE manual resolution time by 66%.
+                Combined graph neural networks, causal inference, and
+                knowledge-graph retrieval to diagnose failures and generate
+                remediation plans.
+              </p>
+              <div class="tags">
+                <span>Graph neural networks</span><span>LightRAG</span
+                ><span>Neo4j</span><span>PySpark</span><span>Kubernetes</span
+                ><span>vLLM</span>
+              </div>
+            </div>
+          </details>
+          <details class="experience-row reveal">
+            <summary>
+              <span class="row-index">02</span>
+              <div>
+                <h3>Rutgers Aresty</h3>
+                <span>Research Assistant</span>
+              </div>
+              <p>Real-time interaction.<br />Real scientific exploration.</p>
+              <span class="expand" aria-hidden="true">+</span>
+            </summary>
+            <div class="experience-detail">
+              <p>
+                Developed a multiplayer system for scientific experiments,
+                enabling concurrent interaction with minimal delay through
+                non-blocking data streams and time-series logging.
+              </p>
+              <div class="tags">
+                <span>Unity</span><span>C# / .NET</span><span>Firebase</span
+                ><span>Concurrent systems</span>
+              </div>
+            </div>
+          </details>
+          <details class="experience-row reveal">
+            <summary>
+              <span class="row-index">03</span>
+              <div>
+                <h3>BlaZop</h3>
+                <span>Software Engineering Intern</span>
+              </div>
+              <p>Making a platform<br />a little more human.</p>
+              <span class="expand" aria-hidden="true">+</span>
+            </summary>
+            <div class="experience-detail">
+              <p>
+                Built an AI chatbot for SaaS navigation with Angular and Python.
+                Automated training-data generation from internal documentation,
+                then fine-tuned LLaMA 3.1 with retrieval-augmented generation
+                for context-aware responses. Also built semantic search for
+                application architecture templates.
+              </p>
+              <div class="tags">
+                <span>Angular</span><span>Python</span><span>LLaMA 3.1</span
+                ><span>LangChain</span><span>ChromaDB</span><span>CLIP</span>
+              </div>
+            </div>
+          </details>
+          <details class="experience-row reveal">
+            <summary>
+              <span class="row-index">04</span>
+              <div>
+                <h3>First Move Partners</h3>
+                <span>Software Engineering Intern</span>
+              </div>
+              <p>Clearer information.<br />Better hospital operations.</p>
+              <span class="expand" aria-hidden="true">+</span>
+            </summary>
+            <div class="experience-detail">
+              <p>
+                Built a central dashboard for hospital administrators to track
+                staff and medical resources in real time.
+              </p>
+              <div class="tags">
+                <span>React</span><span>Node.js</span><span>Express</span
+                ><span>MongoDB</span><span>Postman</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section
+        class="projects section-shell section-space"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow section-label">02 / SELECTED EXPLORATIONS</p>
+            <h2 id="projects-title">
+              Curiosity, <span class="muted">in code.</span>
+            </h2>
+          </div>
+          <a
+            class="text-link"
+            href="https://github.com/KashyapTan"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Explore my GitHub
+            <span aria-hidden="true"
+              ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                <path d="M6 18L18 6M6 6h12v12" /></svg></span
+          ></a>
+        </div>
+        <div class="project-grid">
+          <article class="project-card tilt-card reveal">
+            <div class="project-art assistant-art" aria-hidden="true">
+              <div class="waveform">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <span class="visual-caption">CONTEXT → TOOLS → ACTION</span>
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">AI ASSISTANT / AGENT HARNESS</span>
+              <h3>Xpdite</h3>
+              <p>
+                An always-on-top desktop assistant that turns context into
+                action. Local or cloud models, semantic tool retrieval,
+                persistent memory, and multi-step execution.
+              </p>
+              <div class="tags">
+                <span>Electron</span><span>TypeScript</span><span>Python</span
+                ><span>MCP</span>
+              </div>
+              <a
+                class="project-source"
+                href="https://github.com/KashyapTan/Xpdite"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Xpdite on GitHub"
+                >View project
+                <span aria-hidden="true"
+                  ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 18L18 6M6 6h12v12" /></svg></span
+              ></a>
+            </div>
+          </article>
+          <article class="project-card tilt-card reveal">
+            <div class="project-art agents-art" aria-hidden="true">
+              <svg
+                class="agent-diagram"
+                viewBox="0 0 480 140"
+                aria-hidden="true"
+              >
+                <path
+                  class="agent-wires"
+                  d="M240 40V68M80 92V68H400V92M240 68V92"
+                />
+                <g class="agent-svg-node">
+                  <rect x="188" y="8" width="104" height="32" rx="4" />
+                  <text x="240" y="29">BROKER</text>
+                </g>
+                <g class="agent-svg-leaf">
+                  <rect x="32" y="92" width="96" height="30" rx="3" />
+                  <text x="80" y="112">BUILD</text>
+                </g>
+                <g class="agent-svg-leaf">
+                  <rect x="192" y="92" width="96" height="30" rx="3" />
+                  <text x="240" y="112">REVIEW</text>
+                </g>
+                <g class="agent-svg-leaf">
+                  <rect x="352" y="92" width="96" height="30" rx="3" />
+                  <text x="400" y="112">RESEARCH</text>
+                </g>
+              </svg>
+              <span class="visual-caption"
+                >ONE BROKER. PARALLEL POSSIBILITIES.</span
+              >
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">DEVELOPER TOOLS / AGENT SYSTEMS</span>
+              <h3>Multplx</h3>
+              <p>
+                An agent coordination system for moving multiple software tasks
+                forward. Isolated worktrees, durable supervision, and explicit
+                human control over delivery.
+              </p>
+              <div class="tags">
+                <span>Agent orchestration</span><span>Worktrees</span
+                ><span>Rust</span><span>Shell</span>
+              </div>
+              <a
+                class="project-source"
+                href="https://github.com/KashyapTan/Multplx"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Multplx on GitHub"
+                >View project
+                <span aria-hidden="true"
+                  ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 18L18 6M6 6h12v12" /></svg></span
+              ></a>
+            </div>
+          </article>
+          <article class="project-card tilt-card reveal">
+            <div class="project-art search-art" aria-hidden="true">
+              <div class="search-diagram">
+                <div class="search-query">
+                  ⌕ &nbsp; where does context become action?
+                </div>
+                <div class="search-result"><span></span><i></i></div>
+                <div class="search-result"><span></span><i></i></div>
+                <div class="search-result"><span></span><i></i></div>
+              </div>
+              <span class="visual-caption"
+                >YOUR CODEBASE, IN YOUR OWN WORDS.</span
+              >
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">LOCAL SEARCH / DEVELOPER TOOLS</span>
+              <h3>KBISS</h3>
+              <p>
+                Search an entire local repository with natural language. Exact
+                matching, BM25, and semantic retrieval bring the right files
+                into focus without uploading your code.
+              </p>
+              <div class="tags">
+                <span>TypeScript</span><span>Bun</span><span>BM25</span
+                ><span>Local embeddings</span>
+              </div>
+              <a
+                class="project-source"
+                href="https://github.com/KashyapTan/knowledge-base-index-search-service"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View KBISS on GitHub"
+                >View project
+                <span aria-hidden="true"
+                  ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 18L18 6M6 6h12v12" /></svg></span
+              ></a>
+            </div>
+          </article>
+          <article class="project-card tilt-card reveal">
+            <div class="project-art scraper-art" aria-hidden="true">
+              <div class="scraper-diagram">
+                <span>01 <b>HTTP</b><i></i></span
+                ><span>02 <b>BROWSER</b><i></i></span
+                ><span>03 <b>EXTRACT</b><i></i></span>
+              </div>
+              <span class="visual-caption">FETCH → EXTRACT → UNDERSTAND</span>
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">WEB INFRASTRUCTURE / EXTRACTION</span>
+              <h3>Xpdite Scraper</h3>
+              <p>
+                A concurrent, tiered extraction engine behind Xpdite’s web fetch
+                tool. Starts with fast HTTP, escalates when needed, and exposes
+                timing through terminal and web interfaces.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>FastAPI</span><span>Trafilatura</span
+                ><span>MCP</span>
+              </div>
+              <a
+                class="project-source"
+                href="https://github.com/KashyapTan/xpdite-scraper"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Xpdite Scraper on GitHub"
+                >View project
+                <span aria-hidden="true"
+                  ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 18L18 6M6 6h12v12" /></svg></span
+              ></a>
+            </div>
+          </article>
+          <article class="project-card tilt-card reveal">
+            <div class="project-art analytics-art" aria-hidden="true">
+              <div class="chart-bars">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                ><i></i><i></i><i></i>
+              </div>
+              <span class="visual-caption">DATA → PATTERNS → PREDICTIONS</span>
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">MACHINE LEARNING / SPORTS</span>
+              <h3>NBA Terminal</h3>
+              <p>
+                A desktop NBA research and analytics suite. Explore player
+                stats, team defense, and projections powered by an XGBoost model
+                and custom Zone Matchup Score.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>PyQt</span><span>XGBoost</span
+                ><span>NBA API</span>
+              </div>
+              <a
+                class="project-source"
+                href="https://github.com/KashyapTan/NBA-Terminal"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View NBA Terminal on GitHub"
+                >View project
+                <span aria-hidden="true"
+                  ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 18L18 6M6 6h12v12" /></svg></span
+              ></a>
+            </div>
+          </article>
+          <article class="project-card tilt-card reveal">
+            <div class="project-art matrix-art" aria-hidden="true">
+              <div class="matrix-grid"></div>
+              <span class="visual-caption"
+                >HISTORY → SIMILARITY → DISCOVERY</span
+              >
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">MACHINE LEARNING / DISCOVERY</span>
+              <h3>Movie Recommender</h3>
+              <p>
+                Finding the next great watch through viewing history and
+                ratings. A matrix factorization pipeline built with Apache Spark
+                on the Netflix Prize dataset.
+              </p>
+              <div class="tags">
+                <span>Apache Spark</span><span>Python</span><span>SVD</span
+                ><span>NumPy</span>
+              </div>
+              <span class="project-note">RECOMMENDER SYSTEMS EXPLORATION</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        class="about section-shell section-space"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="about-intro reveal">
+          <p class="eyebrow section-label">03 / THE PERSON BEHIND THE CODE</p>
+          <h2 id="about-title">
+            An engineer’s mind.<br />A
+            <span class="blue-text">builder’s instinct.</span>
+          </h2>
+          <div class="about-body">
+            <p>
+              I’m drawn to problems that make me think: low-latency systems,
+              machine learning, optimization, and the details that make an
+              interface feel right.
+            </p>
+            <p>
+              I studied Computer Science &amp; Mathematics at Rutgers
+              University, graduating in 2026. My work spans research, full-stack
+              development, and tools that make AI useful beyond a chat window.
+              Today, that curiosity takes me into payments at Intuit.
+            </p>
+          </div>
+        </div>
+        <div class="toolkit reveal">
+          <div class="toolkit-heading">
+            <p class="eyebrow">MY WORKING TOOLKIT</p>
+            <span aria-hidden="true">[ ALWAYS EVOLVING ]</span>
+          </div>
+          <div class="skill-row">
+            <span>01 / LANGUAGES</span>
+            <p>Python · TypeScript · JavaScript · Java · C / C++ · SQL</p>
+          </div>
+          <div class="skill-row">
+            <span>02 / INTERFACES</span>
+            <p>React · Angular · HTML / CSS · Tailwind · Figma · GSAP</p>
+          </div>
+          <div class="skill-row">
+            <span>03 / AI & DATA</span>
+            <p>PyTorch · TensorFlow · LangChain · Spark · MongoDB · Firebase</p>
+          </div>
+          <div class="skill-row">
+            <span>04 / INFRASTRUCTURE</span>
+            <p>Docker · Kubernetes · AWS · Azure · GCP · Git · Linux</p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="contact section-shell section-space"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="contact-copy reveal">
+          <p class="eyebrow section-label">04 / NEXT CONNECTION</p>
+          <h2 id="contact-title">
+            Good things<br />start with<br /><span class="blue-text"
+              >a hello.</span
+            ><span class="contact-arrow" aria-hidden="true">↗</span>
+          </h2>
+          <a class="email-link" href="mailto:kashyapt.business@gmail.com"
+            >kashyapt.business@gmail.com</a
+          >
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/kashyaptanuku/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn
+              <span aria-hidden="true"
+                ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 18L18 6M6 6h12v12" /></svg></span></a
+            ><a
+              href="https://github.com/KashyapTan"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub
+              <span aria-hidden="true"
+                ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 18L18 6M6 6h12v12" /></svg></span></a
+            ><a
+              href="icons/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Résumé
+              <span aria-hidden="true"
+                ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 18L18 6M6 6h12v12" /></svg></span
+            ></a>
+          </div>
+        </div>
+        <form id="contact-form" class="reveal">
+          <label for="name">Your name</label
+          ><input
+            id="name"
+            name="name"
+            autocomplete="name"
+            placeholder="Alex Morgan"
+            maxlength="150"
+            required
+          /><label for="email">Email address</label
+          ><input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="alex@example.com"
+            required
+          /><label for="message">What’s on your mind?</label
+          ><textarea
+            id="message"
+            name="message"
+            rows="3"
+            maxlength="5000"
+            placeholder="An idea, a question, or just a hello…"
+            required
+          ></textarea
+          ><button class="button button-primary" type="submit">
+            Send message
+            <span aria-hidden="true"
+              ><svg class="link-arrow" viewBox="0 0 24 24" fill="none">
+                <path d="M6 18L18 6M6 6h12v12" /></svg
+            ></span>
+          </button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+          <noscript
+            ><p>
+              Please email me using the link alongside this form.
+            </p></noscript
+          >
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer section-shell">
+      <a class="wordmark" href="#home" aria-label="Back to top"
+        >kt<span>.</span></a
+      >
+      <p>© <span id="year">2026</span> Kashyap Tanuku</p>
+      <span>BUILT WITH INTENTION. ALWAYS ITERATING.</span
+      ><a href="#home">Back to top ↑</a>
+    </footer>
+  </body>
 </html>
