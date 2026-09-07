@@ -1397,6 +1397,11 @@ svg.agent-diagram {
   font-size: 11px;
   color: #7e8a9b;
 }
+@media (min-width: 761px) {
+  .chapter-work .scene-instruction {
+    bottom: 48px;
+  }
+}
 @media (max-width: 760px) {
   .orbit-dial.scene-ready .scene-links > a,
   .orbit-dial.scene-ready .scene-links > button {
