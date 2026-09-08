@@ -436,7 +436,16 @@ export function createOrbitalScene(isPaused) {
       renderer.render(view.scene, view.camera);
       view.nodes.forEach((node) => {
         // Keep type upright and unwarped while the 3D dial turns behind it.
-        node.mesh.getWorldPosition(projected).project(view.camera);
+        node.mesh.getWorldPosition(projected);
+        // Reserve the marker's projected radius, not a fixed pixel gap. This
+        // keeps labels off the geometry when scenes grow on large displays.
+        const cameraDistance = view.camera.position.z - projected.z;
+        const markerRadius =
+          (0.46 * node.mesh.scale.x * bounds.height) /
+          (2 * Math.tan(THREE.MathUtils.degToRad(view.camera.fov / 2)) * cameraDistance);
+        const labelHeight = node.label.firstElementChild?.offsetHeight || 16;
+        const labelGap = markerRadius + 8;
+        projected.project(view.camera);
         const x = (projected.x * 0.5 + 0.5) * bounds.width;
         const y = (-projected.y * 0.5 + 0.5) * bounds.height;
         const labelWidth = node.label.offsetWidth;
@@ -446,14 +455,14 @@ export function createOrbitalScene(isPaused) {
         );
         const sideOffset =
           Math.sign(x - bounds.width / 2) *
-          (labelWidth / 2 + 14) *
+          (labelWidth / 2 + labelGap) *
           (1 - Math.abs(vertical));
         const labelX = Math.max(
           labelWidth / 2 + 8,
           Math.min(bounds.width - labelWidth / 2 - 8, x + sideOffset),
         );
         node.label.style.left = labelX + "px";
-        node.label.style.top = y + vertical * 27 + "px";
+        node.label.style.top = y + vertical * (labelGap + labelHeight / 2) + "px";
       });
       view.host.classList.add("scene-ready");
     });
