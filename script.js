@@ -1,4 +1,4 @@
-import { createJourney } from "./journey.js?v=20260906.14";
+import { createJourney } from "./journey.js?v=20260907.1";
 
 const matrix = document.querySelector(".matrix-grid");
 for (let i = 0; i < 48; i++) matrix.append(document.createElement("i"));
@@ -158,7 +158,7 @@ window.addEventListener("popstate", () => {
     navigateChapter(section, { updateHistory: false, immediate: true });
 });
 
-import("./orbital.js?v=20260906.14")
+import("./orbital.js?v=20260907.1")
   .then(({ createOrbitalScene }) => {
     orbitalScene = createOrbitalScene(() => paused);
     journey.decks.forEach((deck, id) => orbitalScene.select(id, deck.active));

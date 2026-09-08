@@ -1,0 +1,176 @@
+/* Screen-sized chapters and a shared, height-aware desktop scale.
+   Both axes constrain growth: an ultrawide laptop must not inherit 4K heights.
+   Use real layout dimensions, never zoom or transforms, so text stays sharp
+   and the WebGL projection and accessible hit targets share the same bounds. */
+@media (min-width: 761px) {
+  :root {
+    --screen-unit: clamp(1px, min(0.055vw, 0.095svh), 1.6px);
+    --chapter-header: clamp(68px, 6svh, 96px);
+    --chapter-space: clamp(28px, 4svh, 72px);
+    --chapter-body: calc(16 * var(--screen-unit));
+    --chapter-small: calc(12 * var(--screen-unit));
+  }
+  .section-shell {
+    width: calc(100% - 12vw);
+    max-width: min(230svh, calc(1800 * var(--screen-unit)));
+    padding-inline: 0;
+  }
+  .site-header {
+    height: var(--chapter-header);
+  }
+  .site-header .journey-dock > a {
+    font-size: calc(14 * var(--screen-unit));
+    padding: calc(10 * var(--screen-unit)) calc(16 * var(--screen-unit));
+  }
+  .site-header .journey-dock #motion-toggle {
+    font-size: calc(18 * var(--screen-unit));
+  }
+  .spatial-ready main > .section-space {
+    min-height: calc(100svh - var(--chapter-header));
+    padding-block: var(--chapter-space);
+  }
+  .spatial-ready main > :is(.work, .projects, .about) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact {
+    align-content: center;
+  }
+  .hero {
+    min-height: 100svh;
+    height: auto;
+    max-height: none;
+    padding-block: calc(var(--chapter-header) + 28px) calc(90 * var(--screen-unit));
+    align-items: center;
+    column-gap: calc(40 * var(--screen-unit));
+  }
+  .hero-copy { padding-bottom: 0; }
+  .hero h1 { font-size: clamp(70px, 8.3vw, calc(150 * var(--screen-unit))); }
+  .hero-statement { font-size: calc(32 * var(--screen-unit)); }
+  .hero-description { font-size: var(--chapter-body); }
+  .hero .eyebrow { font-size: var(--chapter-small); }
+  .hero-art.scene-slot {
+    height: clamp(450px, 70svh, calc(850 * var(--screen-unit)));
+    margin: 0;
+  }
+  .hero-footer {
+    left: 0;
+    right: 0;
+    min-height: calc(72 * var(--screen-unit));
+    font-size: calc(11 * var(--screen-unit));
+  }
+  .section-heading,
+  .spatial-ready .projects .section-heading {
+    margin-bottom: calc(28 * var(--screen-unit));
+  }
+  .section-heading h2,
+  .about-intro h2 {
+    font-size: clamp(32px, min(3.5vw, 5.5svh), calc(62 * var(--screen-unit)));
+  }
+  .section-label,
+  .eyebrow { font-size: var(--chapter-small); }
+  .section-label { margin-bottom: calc(18 * var(--screen-unit)); }
+  .section-heading > p,
+  .about-body p { font-size: var(--chapter-body); line-height: 1.7; }
+  .about-body p { max-width: 65ch; }
+  .about-intro { column-gap: calc(65 * var(--screen-unit)); }
+  .chapter-layout { gap: calc(60 * var(--screen-unit)); }
+  .chapter-map {
+    height: clamp(400px, 58svh, calc(650 * var(--screen-unit)));
+  }
+  .spatial-ready .about > .chapter-layout {
+    margin-top: calc(28 * var(--screen-unit));
+    min-height: 0;
+  }
+  .chapter-about .chapter-map {
+    height: clamp(320px, 44svh, calc(510 * var(--screen-unit)));
+  }
+  .chapter-work .featured-work,
+  .chapter-work .experience-panel,
+  .skill-panel { padding: calc(28 * var(--screen-unit)); }
+  .chapter-work .featured-copy h3 { font-size: calc(44 * var(--screen-unit)); }
+  .chapter-work .featured-copy h4 { font-size: calc(19 * var(--screen-unit)); }
+  .chapter-work .featured-copy p:not(.eyebrow),
+  .chapter-projects .project-copy > p,
+  .skill-description { font-size: var(--chapter-body); line-height: 1.65; }
+  .chapter-work .featured-copy .tags span,
+  .tags span { font-size: var(--chapter-small); padding: calc(5 * var(--screen-unit)) calc(8 * var(--screen-unit)); }
+  .chapter-work .payment-visual {
+    height: calc(105 * var(--screen-unit));
+    margin-top: calc(26 * var(--screen-unit));
+  }
+  .chapter-work .gateway-node { min-width: calc(104 * var(--screen-unit)); }
+  .chapter-work .flow-node { font-size: var(--chapter-small); }
+  .chapter-work .gateway-node small { font-size: calc(10 * var(--screen-unit)); }
+  .role-illustration { height: calc(100 * var(--screen-unit)); margin-top: calc(20 * var(--screen-unit)); }
+  .chapter-projects .project-art { height: calc(200 * var(--screen-unit)); }
+  .chapter-projects .project-copy { padding: calc(26 * var(--screen-unit)); }
+  .chapter-projects .project-copy h3,
+  .skill-panel h3 { font-size: calc(34 * var(--screen-unit)); }
+  .project-category { font-size: var(--chapter-small); }
+  .skill-tokens span { font-size: calc(14 * var(--screen-unit)); }
+  .deck-counter { font-size: calc(13 * var(--screen-unit)); }
+  .deck-arrow { width: calc(44 * var(--screen-unit)); height: calc(44 * var(--screen-unit)); }
+  .orbit-dial.scene-ready .scene-links > a,
+  .orbit-dial.scene-ready .scene-links > button {
+    font-size: calc(14 * var(--screen-unit));
+    max-width: calc(170 * var(--screen-unit));
+  }
+  .hero-art.orbit-dial.scene-ready .scene-links > a { font-size: calc(15 * var(--screen-unit)); }
+  .orbit-dial .scene-caption { font-size: calc(11 * var(--screen-unit)); }
+  .orbit-dial .scene-instruction { font-size: calc(12 * var(--screen-unit)); }
+  .chapter-work .scene-instruction { bottom: calc(40 * var(--screen-unit)); }
+  .contact { gap: calc(100 * var(--screen-unit)); }
+  .contact h2 { font-size: calc(90 * var(--screen-unit)); max-width: 8ch; }
+  .email-link, .text-link, input, textarea { font-size: var(--chapter-body); }
+  .social-links, label { font-size: calc(14 * var(--screen-unit)); }
+  .contact form { padding-top: calc(40 * var(--screen-unit)); }
+  input, textarea { margin-bottom: calc(30 * var(--screen-unit)); }
+  .button {
+    font-size: var(--chapter-body);
+    min-height: calc(54 * var(--screen-unit));
+    padding: calc(16 * var(--screen-unit)) calc(24 * var(--screen-unit));
+  }
+}
+
+/* Short desktop windows retain readable text while reclaiming vertical space. */
+@media (min-width: 761px) and (max-height: 900px) {
+  :root { --chapter-space: 20px; }
+  .hero { padding-block: calc(var(--chapter-header) + 24px) 76px; }
+  .hero h1 { font-size: min(8.3vw, 14svh); }
+  .hero .eyebrow { margin-bottom: 20px; }
+  .hero-statement { font-size: clamp(23px, 3.8svh, 32px); margin-top: 24px; }
+  .hero-art.scene-slot { height: max(400px, 66svh); }
+  .section-heading,
+  .spatial-ready .projects .section-heading { margin-bottom: 20px; }
+  .chapter-work .featured-work,
+  .chapter-work .experience-panel { padding: 18px; }
+  .chapter-work .featured-copy h3 { font-size: 36px; margin-bottom: 12px; }
+  .chapter-work .featured-copy h4 { font-size: 18px; margin-bottom: 10px; }
+  .chapter-work .featured-copy > .eyebrow { margin-bottom: 12px; }
+  .chapter-work .payment-visual { height: 82px; margin-top: 18px; }
+  .chapter-work .featured-copy .tags { margin-top: 14px; }
+  .chapter-work .role-illustration { height: 70px; margin-top: 12px; }
+  .chapter-projects .project-art { height: 145px; }
+  .chapter-projects .project-copy { padding: 22px; }
+  .chapter-projects .project-copy h3 { font-size: 28px; }
+  .about-intro { grid-template-columns: 1fr 1.15fr; column-gap: 40px; }
+  .about-body p { line-height: 1.6; }
+  .spatial-ready .about > .chapter-layout { margin-top: 20px; }
+  .chapter-about .chapter-map { height: 300px; }
+  .chapter-about .scene-instruction { bottom: 0; }
+  .chapter-work .scene-instruction { bottom: 28px; }
+  .skill-panel { padding: 20px; }
+  .skill-panel h3 { font-size: 30px; }
+}
+
+@media (min-width: 761px) {
+  /* Perspective must scale with the diagram, or the far endpoint is clipped. */
+  .chapter-work .payment-flow {
+    width: 94%;
+    max-width: calc(700 * var(--screen-unit));
+    transform: perspective(calc(1200 * var(--screen-unit))) rotateX(16deg) rotateY(-10deg);
+  }
+  .chapter-work .gateway-node { height: calc(85 * var(--screen-unit)); }
+}
